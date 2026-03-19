@@ -5,7 +5,7 @@
 }
 .header {
   padding-top: 3rem;
-  padding-bottom: 1.9rem;
+  padding-bottom: 3.35rem;
   padding-left: 4rem;
   font-family: "arial", sans-serif;
   text-align: center;
@@ -14,10 +14,10 @@
 }
 .header h3 {
   font-size: 3rem;
-  padding: 1rem;
+
 }
 .cover-img-figure {
-  height: 52rem;
+  height: 58rem;
 }
 
 img {
@@ -26,25 +26,25 @@ img {
 }
 
 .wrapper {
-  margin-top: 5.75rem;
-  margin-left: 4.5rem;
-  margin-right: 1rem;
+  margin-top: 5.85rem;
+  margin-left: 6rem;
+  margin-right: 5.5rem;
 }
 .container {
   box-sizing: border-box;
 }
 
 .img-container {
-  width: 30.5rem;
+  width: 474px;
 }
 .card {
   display: inline-block;
   width: 31.1%;
   box-sizing: border-box;
-  vertical-align: top;
+
   margin-left: 1%;
-  margin-right: 1%;
-  margin-bottom: 5rem;
+  margin-right: .7%;
+  margin-bottom: 4rem;
 }
 
 .card-title {
@@ -56,22 +56,22 @@ img {
 }
 
 .card-district {
-  margin-top: 0.9rem;
+  margin-top: 0.7rem;
   font-size: 1.2rem;
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
 }
 
 .card-description {
-  margin-top: 2.1rem;
+  margin-top: 1.7rem;
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
+  font-weight:"100"
 }
 .card-btn  {
-  margin-top: 1.05rem;
+  margin-top: 1rem;
   width: 10rem;
-
-  padding: 1rem;
+  padding:0.7rem;
   border: none;
   background-color: #702053;
   color: white;
@@ -87,16 +87,16 @@ img {
 .wonders-title {
   color: #6d134c;
   text-align: center;
-  margin-top: 2.1rem;
+  margin-top: 3rem;
   font-size: 4rem;
   font-weight: 300;
-  font-family: "Montserrat", sans-serif;
+  font-family:  sans-serif;
   letter-spacing: 0.2rem;
   padding-left: 1.2rem;
 }
 
 .wonders-description {
-  padding-left: 5rem; 
+  padding-left: 5rem;
   text-align: justify;
   color: #1f1f1f;
   font-family: "Montserrat", sans-serif;
@@ -104,14 +104,14 @@ img {
   margin-top: 2.85rem;
   line-height: 2.55rem;
   letter-spacing: 0.1rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 1rem; */
   font-weight: 300;
 }
 
 .footer {
   background-color: #702053;
   color: white;
-  margin-top: 8rem;
+  margin-top: 5.6rem;
   padding: 2rem;
   padding-left: 6rem;
 }
