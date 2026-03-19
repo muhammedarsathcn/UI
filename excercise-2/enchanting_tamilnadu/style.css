@@ -4,14 +4,17 @@
   box-sizing: border-box;
 }
 .header {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 3rem;
+  padding-bottom: 1.9rem;
   padding-left: 4rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "arial", sans-serif;
   text-align: center;
   color: #ffffff;
   background-color: #3e163c;
-  font-size: 1.8rem;
+}
+.header h3 {
+  font-size: 3rem;
+  padding: 1rem;
 }
 .cover-img-figure {
   height: 52rem;
@@ -23,16 +26,16 @@ img {
 }
 
 .wrapper {
-  margin-top: 5rem;
-  margin-left: 16.5rem;
-  margin-right: 12.5rem;
+  margin-top: 5.75rem;
+  margin-left: 4.5rem;
+  margin-right: 1rem;
 }
 .container {
   box-sizing: border-box;
 }
 
 .img-container {
-  width: 25rem;
+  width: 30.5rem;
 }
 .card {
   display: inline-block;
@@ -41,75 +44,84 @@ img {
   vertical-align: top;
   margin-left: 1%;
   margin-right: 1%;
-  margin-bottom: 4.85rem;
+  margin-bottom: 5rem;
 }
 
 .card-title {
   font-family: "Open Sans", sans-serif;
   margin-top: 0.8rem;
-  font-size: 1.65rem;
+  font-size: 2.1rem;
   font-weight: 300;
   letter-spacing: 0.1rem;
 }
 
 .card-district {
-  margin-top: 0.5rem;
+  margin-top: 0.9rem;
   font-size: 1.2rem;
-  font-family: "Ubuntu",sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 500;
 }
 
 .card-description {
-  margin-top: 1.1rem;
-  font-size: 0.90rem;
+  margin-top: 2.1rem;
+  font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
 }
-.card-btn {
+.card-btn  {
   margin-top: 1.05rem;
-  width: 8.5rem;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
+  width: 10rem;
+
+  padding: 1rem;
   border: none;
   background-color: #702053;
   color: white;
   text-align: center;
   font-size: 1.05rem;
-  font-weight: 100;
+  font-weight: 100 ;
+}
+.btn-txt{
+  font-family: "Open Sans",sans-serif;
+  font-weight: 200;
+  font-size: 1.2rem;
 }
 .wonders-title {
   color: #6d134c;
   text-align: center;
   margin-top: 2.1rem;
-  font-size: 3rem;
-  font-weight: 200;
+  font-size: 4rem;
+  font-weight: 300;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0.2rem;
   padding-left: 1.2rem;
 }
 
 .wonders-description {
-  padding-left: 6.35rem;
+  padding-left: 5rem; 
   text-align: justify;
   color: #1f1f1f;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.65rem;
   margin-top: 2.85rem;
-  line-height: 2.25rem;
+  line-height: 2.55rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 
-.footer{
+.footer {
   background-color: #702053;
   color: white;
-  margin-top:2.3rem;
+  margin-top: 8rem;
   padding: 2rem;
+  padding-left: 6rem;
 }
 
-.footer-heading{
-font-size: 1.3rem;
+.footer-heading {
+  font-size: 1.3rem;
+  margin-bottom: 0;
 }
 
-.footer-description{
-font-size: 1.10rem;
- font-family: "Montserrat", sans-serif;
- margin-top: .2rem;
+.footer-description {
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
 }
