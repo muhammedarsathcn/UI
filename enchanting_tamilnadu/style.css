@@ -4,20 +4,19 @@
   box-sizing: border-box;
 }
 .header {
-  padding-top: 3rem;
-  padding-bottom: 3.35rem;
   padding-left: 4rem;
   font-family: "arial", sans-serif;
   text-align: center;
   color: #ffffff;
+  height: 149px;
   background-color: #3e163c;
 }
 .header h3 {
   font-size: 3rem;
-
+  line-height: 149px;
 }
 .cover-img-figure {
-  height: 58rem;
+  height: 59rem;
 }
 
 img {
@@ -30,21 +29,18 @@ img {
   margin-left: 6rem;
   margin-right: 5.5rem;
 }
-.container {
-  box-sizing: border-box;
-}
 
 .img-container {
   width: 474px;
 }
 .card {
   display: inline-block;
+  vertical-align: top;
+  min-height: 28.125rem;
   width: 31.1%;
-  box-sizing: border-box;
-
   margin-left: 1%;
-  margin-right: .7%;
-  margin-bottom: 4rem;
+  margin-right: 0.4%;
+  margin-bottom: 5.2rem;
 }
 
 .card-title {
@@ -66,21 +62,21 @@ img {
   margin-top: 1.7rem;
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
-  font-weight:"100"
+  font-weight: "100";
 }
-.card-btn  {
+.card-btn {
   margin-top: 1rem;
   width: 10rem;
-  padding:0.7rem;
+  padding: 0.7rem;
   border: none;
   background-color: #702053;
-  color: white;
+  color:#ffffff;
   text-align: center;
   font-size: 1.05rem;
-  font-weight: 100 ;
+  font-weight: 100;
 }
-.btn-txt{
-  font-family: "Open Sans",sans-serif;
+.btn-txt {
+  font-family: "Open Sans", sans-serif;
   font-weight: 200;
   font-size: 1.2rem;
 }
@@ -88,37 +84,37 @@ img {
   color: #6d134c;
   text-align: center;
   margin-top: 3rem;
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 300;
-  font-family:  sans-serif;
+  font-family: sans-serif;
   letter-spacing: 0.2rem;
   padding-left: 1.2rem;
 }
 
 .wonders-description {
-  padding-left: 5rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
   text-align: justify;
   color: #1f1f1f;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.65rem;
+  font-size: 1.7rem;
   margin-top: 2.85rem;
   line-height: 2.55rem;
-  letter-spacing: 0.1rem;
-  /* margin-bottom: 1rem; */
   font-weight: 300;
 }
 
 .footer {
   background-color: #702053;
-  color: white;
+  color: #ffffff;
   margin-top: 5.6rem;
   padding: 2rem;
-  padding-left: 6rem;
+  padding-left: 7rem;
 }
 
 .footer-heading {
   font-size: 1.3rem;
   margin-bottom: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 .footer-description {
