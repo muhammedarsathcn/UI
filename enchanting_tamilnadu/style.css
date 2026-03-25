@@ -9,9 +9,10 @@
   color: #ffffff;
   height: 152px;
   background-color: #3e163c;
-  letter-spacing: -0.1rem;
+  letter-spacing: -0.11rem;
   padding-right: 1.5rem;
   h3 {
+    padding-left: 0.8rem;
     font-size: 2.66rem;
     line-height: 9.3125rem;
   }
