@@ -18,7 +18,7 @@
   }
 }
 .cover-img-figure {
-  height: 59rem;
+  height:999px;
 }
 
 img {
@@ -120,7 +120,7 @@ img {
 .footer {
   background-color: #702053;
   color: #ffffff;
-  margin-top: 5.1rem;
+  margin-top: 5.4rem;
   min-height: 110px;
   padding-top: 34px;
   padding-left: 7rem;
