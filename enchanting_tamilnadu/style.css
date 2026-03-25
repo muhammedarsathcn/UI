@@ -4,16 +4,16 @@
   box-sizing: border-box;
 }
 .header {
-  padding-left: 4rem;
-  font-family: "arial", sans-serif;
+   font-family: "Noto Sans HK", sans-serif;
   text-align: center;
   color: #ffffff;
-  height: 149px;
+  height: 151px;
   background-color: #3e163c;
-}
-.header h3 {
-  font-size: 3rem;
-  line-height: 149px;
+  letter-spacing: -0.1rem;
+  h3 {
+    font-size: 2.66rem;
+    line-height: 9.3125rem;
+  }
 }
 .cover-img-figure {
   height: 59rem;
@@ -25,30 +25,37 @@ img {
 }
 
 .wrapper {
-  margin-top: 5.85rem;
-  margin-left: 6rem;
-  margin-right: 5.5rem;
+  margin-top: 5.55rem;
+  margin-left: 5.1rem;
+  margin-right: 7.225rem;
 }
 
 .img-container {
-  width: 474px;
+  width: 30rem;
 }
+
 .card {
   display: inline-block;
   vertical-align: top;
   min-height: 28.125rem;
-  width: 31.1%;
-  margin-left: 1%;
-  margin-right: 0.4%;
-  margin-bottom: 5.2rem;
+  width: 31%;
+  margin-left: 32px;
+  margin-bottom: 86px;
+}
+.card:last-child {
+  margin-right: 0;
 }
 
 .card-title {
-  font-family: "Open Sans", sans-serif;
-  margin-top: 0.8rem;
-  font-size: 2.1rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 2.05rem;
   font-weight: 300;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.08rem;
+  margin-top: 0.8rem;
+  line-height: 1.4;
+}
+.shrink {
+  margin-top: 0;
 }
 
 .card-district {
@@ -61,16 +68,17 @@ img {
 .card-description {
   margin-top: 1.7rem;
   font-size: 1.2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: "100";
+  line-height: 1.25;
 }
 .card-btn {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   width: 10rem;
   padding: 0.7rem;
   border: none;
   background-color: #702053;
-  color:#ffffff;
+  color: #ffffff;
   text-align: center;
   font-size: 1.05rem;
   font-weight: 100;
@@ -80,33 +88,35 @@ img {
   font-weight: 200;
   font-size: 1.2rem;
 }
+.wonders {
+  margin-top: 1.4rem;
+}
 .wonders-title {
-  color: #6d134c;
+  color: #791555;
   text-align: center;
-  margin-top: 3rem;
   font-size: 4.5rem;
+  line-height: 1.5;
+  padding-left: 2.2rem;
   font-weight: 300;
-  font-family: sans-serif;
-  letter-spacing: 0.2rem;
-  padding-left: 1.2rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 36px;
 }
 
 .wonders-description {
-  margin-left: 8rem;
-  margin-right: 8rem;
+  margin-left: 8.7rem;
+  margin-right: 6.6rem;
   text-align: justify;
   color: #1f1f1f;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.7rem;
-  margin-top: 2.85rem;
-  line-height: 2.55rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.6;
   font-weight: 300;
 }
 
 .footer {
   background-color: #702053;
   color: #ffffff;
-  margin-top: 5.6rem;
+  margin-top: 5.3rem;
   padding: 2rem;
   padding-left: 7rem;
 }
@@ -118,6 +128,9 @@ img {
 }
 
 .footer-description {
-  font-size: 1.1rem;
-  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 100;
+  margin-top: 0.1rem;
 }
