@@ -7,9 +7,10 @@
    font-family: "Noto Sans HK", sans-serif;
   text-align: center;
   color: #ffffff;
-  height: 151px;
+  height: 152px;
   background-color: #3e163c;
   letter-spacing: -0.1rem;
+  padding-right: 1.5rem;
   h3 {
     font-size: 2.66rem;
     line-height: 9.3125rem;
@@ -25,13 +26,14 @@ img {
 }
 
 .wrapper {
-  margin-top: 5.55rem;
+  margin-top: 5.75rem;
   margin-left: 5.1rem;
   margin-right: 7.225rem;
 }
 
 .img-container {
-  width: 30rem;
+  width: 480px;
+  /* height: 360px; */
 }
 
 .card {
@@ -41,6 +43,7 @@ img {
   width: 31%;
   margin-left: 32px;
   margin-bottom: 86px;
+
 }
 .card:last-child {
   margin-right: 0;
@@ -59,7 +62,7 @@ img {
 }
 
 .card-district {
-  margin-top: 0.7rem;
+  margin-top:9px;
   font-size: 1.2rem;
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
@@ -73,7 +76,7 @@ img {
   line-height: 1.25;
 }
 .card-btn {
-  margin-top: 1.2rem;
+  margin-top: 1.1rem;
   width: 10rem;
   padding: 0.7rem;
   border: none;
@@ -99,7 +102,7 @@ img {
   padding-left: 2.2rem;
   font-weight: 300;
   font-family: "IBM Plex Sans", sans-serif;
-  margin-bottom: 36px;
+  margin-bottom: 27px;
 }
 
 .wonders-description {
@@ -116,13 +119,15 @@ img {
 .footer {
   background-color: #702053;
   color: #ffffff;
-  margin-top: 5.3rem;
-  padding: 2rem;
+  margin-top: 5.1rem;
+  min-height: 110px;
+  padding-top: 34px;
   padding-left: 7rem;
 }
 
 .footer-heading {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  letter-spacing:0.1rem;
   margin-bottom: 0;
   font-family: "Open Sans", sans-serif;
 }
