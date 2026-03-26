@@ -68,6 +68,6 @@ showNumbersFrom1to100();
 displayDate();
 const fahrenheit = convertCelciusToFahrenheit(36);
 console.log(fahrenheit, "F");
-// const numbers = [1, 2, 3, 4, 5];
-console.log(calculateAverage(1));
+const numbers = [1, 2, 3, 4, 5];
+console.log(calculateAverage(numbers));
 console.log(reverseString(false));
