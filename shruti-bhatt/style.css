@@ -1,0 +1,27 @@
+ /* font-family: "Roboto Flex", sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 41.0625rem;
+}
+.hero__title{
+    font-size: 137px;
+    font-weight: 400;
+    letter-spacing: 1.3;
+    font-family:"Roboto Flex", sans-serif ;
+}
+.hero__title-highlight{
+    font-weight: 500;
+}
