@@ -20,14 +20,13 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
   width: 40rem;
   height: 20rem;
   padding: 0.7rem;
-  position: relative;
-  z-index: 1;
   border-radius: 1rem;
   background-color: #ffff;
-  box-shadow: 0 0 0 0 #00000080;
   gap: 1rem;
   cursor: pointer;
   transition: all 500ms;
@@ -35,7 +34,7 @@ img {
 }
 .card:hover {
   transform: scale(1.1);
-  box-shadow: 0 0.2rem 0.6rem -0.1rem #00000010;
+  box-shadow: 0 0.2rem 10rem 1rem #00000010;
   animation: pulse 3s infinite;
   .follow-btn {
     transform: translateY(0);
@@ -83,9 +82,9 @@ img {
   height: 100vh;
 }
 .box {
+  position: absolute;
   width: 4rem;
   height: 4rem;
-  position: absolute;
   bottom: 0;
   z-index: 0;
   background-color: #121212;
