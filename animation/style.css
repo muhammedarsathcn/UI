@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   display: flex;
   justify-content: center;
@@ -17,8 +16,8 @@ img {
 }
 .card {
   background-color: #ffff;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
-  padding: 10px;
+  box-shadow: 0 0 0 0 #00000080;
+  padding: .7rem;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
@@ -35,21 +34,20 @@ img {
 }
 .card:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 .2rem .6rem -.1rem #00000010;
   animation: pulse 3s infinite;
   .follow-btn {
     transform: translateY(0);
     opacity: 1;
   }
 }
-
 .profile {
   display: block;
   width: 5rem;
   height: 5rem;
   object-fit: contain;
   background-color: #f8fafc;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 .profile:hover {
   animation: pulse 2s infinite;
@@ -65,7 +63,6 @@ img {
   font-family: sans-serif;
   text-align: center;
 }
-
 .follow-btn {
   background-color: #808;
   color: #fff;
@@ -73,15 +70,16 @@ img {
   border-radius: 1rem;
   width: 10rem;
   border: none;
-  transform: translateY(100px);
+  transform: translateY(1.6rem);
   opacity: 0;
   transition: all 200ms linear;
   cursor: pointer;
 }
-.follow-btn:active {
-  background-color: #808000;
+.poppers {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
-
 .box {
   background-color: #121212;
   width: 4rem;
@@ -89,7 +87,6 @@ img {
   position: absolute;
   bottom: 0;
   z-index: 0;
-  /* animation: move 2s infinite alternate; */
 }
 .box:nth-of-type(1) {
   background: #ff4d4d;
@@ -147,10 +144,6 @@ img {
   animation: move 11s infinite linear;
 }
 
-/* Target the 3rd box */
-.box:nth-child(3) {
-  background: #4d94ff;
-}
 @keyframes move {
   0% {
     bottom: 0;
@@ -176,12 +169,12 @@ img {
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 0 0px #6366f166;
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(99, 102, 241, 0);
+    box-shadow: 0 0 0 15px #ffffff00;
   }
   100% {
-    box-shadow: 0 0 0 0px rgba(99, 102, 241, 0);
+    box-shadow: 0 0 0 0px #6366f100;
   }
 }
