@@ -170,12 +170,12 @@ img {
 }
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0px #6366f166;
+    box-shadow: 0 0 0 0 #6366f166;
   }
   70% {
-    box-shadow: 0 0 0 15px #ffffff00;
+    box-shadow: 0 0 0 1rem #ffffff00;
   }
   100% {
-    box-shadow: 0 0 0 0px #6366f100;
+    box-shadow: 0 0 0 0 #6366f100;
   }
 }
