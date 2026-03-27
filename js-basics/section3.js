@@ -6,7 +6,7 @@ function showNumbersFrom1to100() {
 }
 // function to display today's date in DD/MM/YYYY format.
 function displayDate() {
-  const todayDate = new Date().toLocaleDateString("en-GB", {
+  const todayDate = new Date().toLocaleDateString("en-IN", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
@@ -70,4 +70,4 @@ const fahrenheit = convertCelciusToFahrenheit(36);
 console.log(fahrenheit, "F");
 const numbers = [1, 2, 3, 4, 5];
 console.log(calculateAverage(numbers));
-console.log(reverseString(false));
+console.log(reverseString("Hello,World"));
