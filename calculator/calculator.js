@@ -9,22 +9,41 @@ const calculator = {
   multiplication: function (a, b) {
     return a * b;
   },
-  divison: function (a, b) {
+  division: function (a, b) {
     if (b === 0) {
-      return "Cannot divided by zero";
+      const response = confirm( "If denominator is zero the value will be Infinity" );
+      if (response) {
+        if (a === 0 && b === 0) {
+          return "0 divided by 0 is undefined";
+        }
+        return a / b;
+      } else {
+        return "Enter the numbers again...";
+      }
     }
     return a / b;
   },
 };
-
-//implimenting the calculator object
-const number1 = Number(prompt("Enter the Number 1"));
-const number2 = Number(prompt("Enter the Number 2"));
+//function to check the input is valid
+function getValidInput(message) {
+  let value;
+  while (true) {
+    value = prompt(message);
+    if (value === null || value.trim() === "") {
+      alert("You must enter the number");
+      continue;
+    }
+    return Number(value);
+  }
+}
+//implementation
+const number1 = getValidInput("Enter the number 1");
+const number2 = getValidInput("Enter the number 2");
 if (isNaN(number1) || isNaN(number2)) {
   console.log("Invalid Input. Enter numbers to calculate...");
 } else {
   console.log(calculator.addition(number1, number2));
   console.log(calculator.subtraction(number1, number2));
   console.log(calculator.multiplication(number1, number2));
-  console.log(calculator.divison(number1, number2));
+  console.log(calculator.division(number1, number2));
 }
