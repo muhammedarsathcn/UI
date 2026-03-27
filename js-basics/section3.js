@@ -43,17 +43,7 @@ function calculateAverage(numbers) {
 // Create a function to reverse a given string
 function reverseString(word) {
   try {
-    const charArray = word.split("");
-    let start = 0;
-    let end = charArray.length - 1;
-    while (start < end) {
-      const temp = charArray[start];
-      charArray[start] = charArray[end];
-      charArray[end] = temp;
-      start++;
-      end--;
-    }
-    return charArray.join("");
+  return word.split("").reverse().join("");
   } catch (e) {
     if (e instanceof TypeError) {
       console.log("Input type is mismatched");

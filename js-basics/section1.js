@@ -6,3 +6,6 @@ console.log(1 + true); //2
 console.log(0 == false); //true
 console.log(1 === true); //false
 console.log(2 == "2"); //true
+
+
+
