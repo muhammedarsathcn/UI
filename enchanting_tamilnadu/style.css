@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+   font-family: "Noto Sans HK", sans-serif;
+  text-align: center;
+  color: #ffffff;
+  height: 152px;
+  background-color: #3e163c;
+  letter-spacing: -0.11rem;
+  padding-right: 1.5rem;
+  h3 {
+    padding-left: 0.8rem;
+    font-size: 2.66rem;
+    line-height: 9.3125rem;
+  }
+}
+.cover-img-figure {
+  height:999px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  margin-top: 5.75rem;
+  margin-left: 5.1rem;
+  margin-right: 7.225rem;
+}
+
+.img-container {
+  width: 480px;
+  /* height: 360px; */
+}
+
+.card {
+  display: inline-block;
+  vertical-align: top;
+  min-height: 28.125rem;
+  width: 31%;
+  margin-left: 32px;
+  margin-bottom: 86px;
+
+}
+.card:last-child {
+  margin-right: 0;
+}
+
+.card-title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 2.05rem;
+  font-weight: 300;
+  letter-spacing: 0.08rem;
+  margin-top: 0.8rem;
+  line-height: 1.4;
+}
+.shrink {
+  margin-top: 0;
+}
+
+.card-district {
+  margin-top:9px;
+  font-size: 1.2rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+.card-description {
+  margin-top: 1.8rem;
+  font-size: 1.2rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: "100";
+  line-height: 1.25;
+}
+.card-btn {
+  margin-top: 1.1rem;
+  width: 10rem;
+  padding: 0.7rem;
+  border: none;
+  background-color: #702053;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 100;
+}
+.btn-txt {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+.wonders {
+  margin-top: 1.4rem;
+}
+.wonders-title {
+  color: #791555;
+  text-align: center;
+  font-size: 4.5rem;
+  line-height: 1.5;
+  padding-left: 2.2rem;
+  font-weight: 300;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 27px;
+}
+
+.wonders-description {
+  margin-left: 8.7rem;
+  margin-right: 6.6rem;
+  text-align: justify;
+  color: #1f1f1f;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.footer {
+  background-color: #702053;
+  color: #ffffff;
+  margin-top: 5.4rem;
+  min-height: 110px;
+  padding-top: 30px;
+  padding-left: 7rem;
+}
+
+.footer-heading {
+  font-size: 1.4rem;
+  letter-spacing:0.1rem;
+  margin-bottom: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.footer-description {
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 100;
+  margin-top: 0.1rem;
+}
