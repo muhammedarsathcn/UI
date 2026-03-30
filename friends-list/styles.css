@@ -24,7 +24,7 @@ img {
   flex-wrap: wrap;
   row-gap: 0.95rem;
   column-gap: 0.9375rem;
-  overflow: scroll;
+  overflow-y: scroll;
   height: 78.4vh;
   padding: 4.25rem 5.1875rem;
 }
@@ -39,7 +39,7 @@ img {
   padding: 0.875rem;
   background-color: #5266af;
   .profile {
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 4.4375rem;
     height: 4.4375rem;
     border-radius: 50%;
@@ -57,7 +57,11 @@ img {
     color: #e2e5f1;
   }
 }
-/* responsive layout  */
+/* responsive layout
+1024
+768
+use variable
+*/
 @media (max-width: 76.9375rem) {
   .card {
     flex: 0 0 calc(50% - 1.0625rem);
