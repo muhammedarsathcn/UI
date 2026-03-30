@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* header  */
 .header {
   padding: 31px 0;
   text-align: center;
@@ -14,18 +14,21 @@
   font-weight: 600;
   letter-spacing: -0.9px;
 }
+/* wrapper  */
 .wrapper {
   padding: 38px 145px;
 }
-
+/* left section  */
 .left {
   float: left;
   width: 876px;
 }
+/* right section  */
 .right {
   float: right;
   width: 539px;
 }
+/* card  */
 .card {
   margin-bottom: 21px;
   border: 1px solid #2d5e90;
@@ -49,9 +52,11 @@
   }
 }
 
+/* doordarshan card  */
 #doordarshan{
 word-spacing: 2.6px;
 }
+/* right section  */
 .right{
     .card{
         margin-bottom: 25px;
