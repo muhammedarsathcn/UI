@@ -5,63 +5,62 @@
 }
 /* header  */
 .header {
-  padding: 31px 0;
+  padding: 1.9375rem 1.8rem 1.9375rem 0;
   text-align: center;
   background-color: #145f94;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.9px;
+  font-size: 1.375rem;
+  font-weight: 500;
+  letter-spacing: -0.05625rem;
 }
 /* wrapper  */
 .wrapper {
-  padding: 38px 145px;
+  padding: 2.375rem 9.0625rem;
 }
 /* left section  */
 .left {
   float: left;
-  width: 876px;
+  width: 54.75rem;
 }
 /* right section  */
 .right {
   float: right;
-  width: 539px;
+  width: 33.6875rem;
 }
 /* card  */
 .card {
-  margin-bottom: 21px;
-  border: 1px solid #2d5e90;
+  margin-bottom: 1.3125rem;
+  border: 0.0625rem solid #6b8caf;
   .card-title {
-    padding: 13.5px 27px;
+    padding: 0.84375rem 1.6875rem;
     background-color: #2a5e91;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
-    font-size: 21px;
+    font-size: 1.3125rem;
     font-weight: 600;
     color: #fff;
   }
   .card-description {
-    padding: 22px 25px;
+    padding: 1.375rem 1.5625rem;
     text-align: justify;
     line-height: 1.54;
     background-color: #f6f6f6;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 100;
-    word-spacing: 1.4px;
+    word-spacing: 0.0875rem;
   }
 }
-
 /* doordarshan card  */
 #doordarshan{
-word-spacing: 2.6px;
+word-spacing: 0.1700rem;
 }
 /* right section  */
 .right{
     .card{
-        margin-bottom: 25px;
+        margin-bottom: 1.5625rem;
     }
     .card-description{
-        word-spacing: 1.55px;
+        word-spacing: 0.096875rem;
     }
 }
