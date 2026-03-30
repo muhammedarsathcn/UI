@@ -8,7 +8,7 @@ fetch("./data/friends.json")
       card.classList.add("card");
       card.innerHTML = `
         <figure class="profile">
-        <img src="${friend.img} alt="${friend.first_name} />
+        <img src="${friend.img}" alt="${friend.first_name}" />
         </figure>
         <section>
         <p class="name">${friend.first_name} ${friend.last_name}</p>
@@ -19,5 +19,8 @@ fetch("./data/friends.json")
     });
   })
   .catch((e) => {
+    const p = document.createElement("p");
+    p.innerHTML = "No friends list is found.";
+    wrapper.appendChild(p);
     console.error("Error in fetching friends-list", e);
   });
