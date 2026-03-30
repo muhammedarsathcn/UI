@@ -1,12 +1,20 @@
+:root {
+  --tablet-screen: 1024px;
+  --mobile-screen: 768px;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Open Sans", sans-serif;
+}
 img {
   width: 100%;
   height: 100%;
-  object-fit:fill;
+  border-radius: 50%;
+  object-fit: fill;
 }
 /* header  */
 .header {
@@ -20,57 +28,56 @@ img {
 /* wrapper  */
 .wrapper {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: start;
   row-gap: 0.95rem;
   column-gap: 0.9375rem;
   overflow-y: scroll;
   height: 78.4vh;
   padding: 4.25rem 5.1875rem;
 }
+/* fallback text  */
+.fallback-text {
+  display: none;
+}
+.hide {
+  display: block;
+}
 /* card  */
 .card {
   display: flex;
   justify-content: start;
   align-items: center;
-  flex: 0 0 calc(33.33% - 1.0625rem);
+  flex: 1 1 calc((100% / 3) - 0.9375rem);
   column-gap: 1.5rem;
   min-height: 6.54rem;
   padding: 0.875rem;
   background-color: #5266af;
   .profile {
-    /* overflow: hidden; */
     width: 4.4375rem;
     height: 4.4375rem;
-    border-radius: 50%;
   }
   .name {
-    font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
     color: #fff;
   }
   .email {
-    font-family: "Open Sans", sans-serif;
     font-weight: 100;
     font-size: 0.9rem;
     color: #e2e5f1;
   }
 }
-/* responsive layout
-1024
-768
-use variable
-*/
-@media (max-width: 76.9375rem) {
-  .card {
-    flex: 0 0 calc(50% - 1.0625rem);
-  }
-}
-@media (max-width: 51.8125rem) {
+/* responsive design layouts */
+@media (max-width: 1024px) {
   .wrapper {
     padding: 1.875rem 1.25rem;
   }
+  .card {
+    flex: 0 0 calc((100% / 2) - 1.0625rem);
+  }
+}
+@media (max-width:768px) {
   .card {
     flex: 1 1 100%;
   }

@@ -1,8 +1,10 @@
 const wrapper = document.querySelector(".wrapper");
 //fetching data from the friends.json
-fetch("./data/friends.json")
-  .then((response) => response.json())
-  .then((data) => {
+async function fetchFriendLists() {
+  try {
+    const response = await fetch("./data/friends.json");
+    const data = await response.json();
+    const fragment = document.createDocumentFragment();
     data.forEach((friend) => {
       const card = document.createElement("article");
       card.classList.add("card");
@@ -15,12 +17,14 @@ fetch("./data/friends.json")
         <p class="email">${friend.email}</p>
         </section>
         `;
-      wrapper.appendChild(card);
+      fragment.appendChild(card);
     });
-  })
-  .catch((e) => {
-    const p = document.createElement("p");
-    p.innerHTML = "No friends list is found.";
-    wrapper.appendChild(p);
-    console.error("Error in fetching friends-list", e);
-  });
+    wrapper.appendChild(fragment);
+  } catch (err) {
+    const p = document.querySelector(".fallback-text");
+    p.classList.toggle("hide");
+    console.log("Something went wrong: " + err);
+  }
+}
+//function calling
+fetchFriendLists();
