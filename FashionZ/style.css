@@ -11,9 +11,7 @@ img {
   height: 100%;
   object-fit: cover;
 }
-li{
-    cursor: pointer;
-}
+
 .nav {
   padding: 4.9375rem 8.875rem 3.125rem 8.875rem;
   position: relative;
@@ -26,35 +24,34 @@ li{
     top: 4.1875rem;
     width: 4.5rem;
     height: 4.5rem;
-    background-color: #fff;
+    background-color: #d8d8d8;
     border-radius: 50%;
     cursor: pointer;
   }
-  .ham-round:focus + .menu {
+  .ham-container:hover .menu {
     opacity: 1;
     visibility: visible;
   }
   .menu {
     position: absolute;
-    right: 7.8125rem;
+    right: 7.3525rem;
     z-index: 1;
-    width: 15.625rem;
+    width: 16.2rem;
     opacity: 0;
     visibility: hidden;
     transition: all 200ms linear;
-    background-color: #fff;
+    background-color: #d8d8d8;
     font-family: sans-serif;
     font-size: 1rem;
     .menu-container {
+      padding-top: 21px;
+      padding-left: 24px;
       li {
-        padding: 0.78125rem;
-        list-style: none;
-        font-size: 1.0625rem;
+        padding-bottom: 21px;
+        font-family: sans-serif;
         font-weight: 700;
-        text-decoration: none;
-      }
-      a {
-        text-decoration: none;
+        list-style: none;
+        cursor: pointer;
       }
     }
   }
@@ -62,7 +59,7 @@ li{
 .main {
   padding-right: 7.8125rem;
   padding-left: 9.125rem;
-  padding-bottom: 3.125rem;
+  padding-bottom: 7.125rem;
 }
 .card {
   display: inline-block;
@@ -77,11 +74,20 @@ li{
     height: 25.9375rem;
     background-color: #24252a;
     .star {
+      display: inline-block;
       position: absolute;
       top: 0.75rem;
-      right:1.375rem;
+      right: 2.375rem;
       color: #91b187;
       font-size: 1.5625rem;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      width: 10px;
+      height: 10px;
+    }
+    .star:focus {
+      color: #adff2f;
     }
     /* size circle  */
     .size-container {
@@ -92,14 +98,14 @@ li{
       height: 3.5625rem;
       border-radius: 50%;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-family: sans-serif;
       background-color: #91b187;
       .size {
         position: absolute;
         top: 28%;
         right: 35%;
-        font-weight: 500;
+        font-weight: 700;
       }
     }
   }
@@ -109,14 +115,15 @@ li{
     margin-bottom: 0.25rem;
     font-family: sans-serif;
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 200;
     color: #fff;
   }
   /* price  */
   .product-price {
     margin-bottom: 0.9375rem;
     font-family: sans-serif;
-    font-size: 1.375rem;
+    font-size: 1.275rem;
+    font-weight: 200;
     color: #aaaaaa;
   }
   /* add to cart btn  */
@@ -126,23 +133,18 @@ li{
     background-color: #2a2b30;
     color: #aaaaaa;
     font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: 500;
     cursor: pointer;
-    .add-to-cart-btn-text {
-      font-weight: 300;
-    }
   }
 }
-.card:nth-child(4) {
+.card:nth-child(4),
+:nth-child(8) {
   margin-right: 0;
 }
-.card:nth-child(8) {
-  margin-right: 0;
-}
-
 /* product image css sprite  */
 .product-img {
-  background-image: url("./assets/products/product_sprite.png");
-  background-repeat: no-repeat;
+  background: url("./assets/products/product_sprite.png") no-repeat;
   transform: scale(0.55);
   transform-origin: center center;
 }
@@ -165,7 +167,7 @@ li{
   position: relative;
   right: 1.875rem;
 }
-.bg-tshirt {
+.bg-tShirt {
   width: 25.5rem;
   height: 25.125rem;
   position: relative;
@@ -180,7 +182,7 @@ li{
   background-color: #000;
   .footer-container {
     display: inline-block;
-    padding: 40px 0px 40px 85px;
+    padding: 35px 0px 40px 45px;
     width: 100%;
     color: #fff;
     font-family: sans-serif;
@@ -188,7 +190,8 @@ li{
     li {
       display: inline-block;
       font-size: 1.5rem;
-      margin-right: 3.9375rem;
+      margin-right: 3.5375rem;
+      cursor: pointer;
     }
   }
 }
