@@ -1,7 +1,4 @@
-:root {
-  --tablet-screen: 1024px;
-  --mobile-screen: 768px;
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +45,7 @@ img {
   display: flex;
   justify-content: start;
   align-items: center;
-  flex: 1 1 calc((100% / 3) - 0.9375rem);
+  flex: 1 1 calc((100% / 3) - 1.87rem);
   column-gap: 1.5rem;
   min-height: 6.54rem;
   padding: 0.875rem;
