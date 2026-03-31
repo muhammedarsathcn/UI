@@ -31,7 +31,7 @@
 /* card  */
 .card {
   margin-bottom: 1.3125rem;
-  border: 0.09rem solid #346293;
+  border: 0.092rem solid #346393;
   .card-title {
     padding: 0.84375rem 1.6875rem;
     background-color: #2a5e91;
@@ -61,6 +61,6 @@ word-spacing: 0.1700rem;
         margin-bottom: 1.5625rem;
     }
     .card-description{
-        word-spacing: 0.096875rem;
+        word-spacing: 0.094975rem;
     }
 }
