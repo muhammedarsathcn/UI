@@ -31,13 +31,13 @@
 /* card  */
 .card {
   margin-bottom: 1.3125rem;
-  border: 0.0625rem solid #6b8caf;
+  border: 0.09rem solid #346293;
   .card-title {
     padding: 0.84375rem 1.6875rem;
     background-color: #2a5e91;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
     font-size: 1.3125rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #fff;
   }
   .card-description {
