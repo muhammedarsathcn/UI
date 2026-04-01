@@ -6,7 +6,6 @@
 body {
   font-family: "Roboto Condensed", sans-serif;
 }
-
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -22,9 +21,9 @@ body {
 }
 .menu-container {
   position: absolute;
-  top: 50px;
-  width: 90px;
-  height: 99px;
+  top: 3.125rem;
+  width: 5.625rem;
+  height: 6.1875rem;
   color: #fff;
   background-color: #000;
 }
@@ -35,70 +34,73 @@ body {
   font-size: 3.5rem;
   cursor: pointer;
 }
-.ham-menu:focus +.menu-list-container{
+.menu-container:hover .menu-list-container{
     transform: translateX(0);
 }
 .logo-container{
     text-align: center;
-    padding:28px 0;
+    padding:1.75rem 0;
 }
 .menu-list-container{
     position: absolute;
     top: 6.2rem;
-    width: 271px;
-    height: 858px;
-    border-top-right-radius: 35px;
-    border-bottom-right-radius: 35px;
+    width: 16.9375rem;
+    height: 53.625rem;
+    border-top-right-radius: 2.1875rem;
+    border-bottom-right-radius: 2.1875rem;
     background-color: #000;
     transform: translateX(-100%);
     transition: all 500ms linear;
     li{
-        padding: 15px 0;
-        font-size: 20px;
+        padding: 0.9375rem 0;
+        font-size: 1.25rem;
+        cursor: pointer;
         font-family: sans-serif;
         font-weight: 200;
         text-align: center;
+        &:hover{
+            background-color:#1f1f1f;
+        }
     }
 }
 .heading {
   position: absolute;
-  top: 55px;
-  left: 40%;
+  top: 3.25rem;
+  left: 36.5%;
   color: #fff;
   font-size: 5.6rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
 }
 .tagline {
   position: absolute;
-  width: 700px;
-  bottom: 2.5rem;
+  width: 43.75rem;
+  bottom: 3.4rem;
   color: #fff;
   left: 31.5%;
-  font-size: 6.5rem;
+  font-size: 4rem;
   font-family: sans-serif;
   .tagline-highlight {
-    font-family: sans-serif;
     font-size: 8.75rem;
   }
 }
-
 .year {
   position: absolute;
   top: 12rem;
-  right: -7.5rem;
-  font-size: 3rem;
+  right: -7.1rem;
+  font-size: 3.3rem;
   color: #fff;
   transform: rotate(270deg);
 }
 .year-highlight{
-    font-size: 7rem;
+    font-size: 9rem;
 }
 .icons{
     position:absolute;
-    bottom: 26px;
-    right: 26px;
+    bottom: 1.625rem;
+    right: 1.625rem;
     .icon{
-        font-size: 40px;
+        font-size: 2.1875rem;
         color: #fff;
+        margin-left: 1.25rem;
     }
 }
