@@ -74,10 +74,10 @@ body {
 .tagline {
   position: absolute;
   width: 43.75rem;
-  bottom: 3.4rem;
+  bottom: 2.5rem;
   color: #fff;
   left: 31.5%;
-  font-size: 4rem;
+  font-size: 6.8rem;
   font-family: sans-serif;
   .tagline-highlight {
     font-size: 8.75rem;
