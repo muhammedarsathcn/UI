@@ -9,14 +9,14 @@
   text-align: center;
   background-color: #145f94;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  font-family: sans-serif;
   font-size: 1.375rem;
   font-weight: 500;
   letter-spacing: -0.05625rem;
 }
 /* wrapper  */
 .wrapper {
-  padding: 2.375rem 9.0625rem;
+  padding: 2.355rem 9.0625rem;
 }
 /* left section  */
 .left {
@@ -26,24 +26,24 @@
 /* right section  */
 .right {
   float: right;
-  width: 33.6875rem;
+  width: 33.7875rem;
 }
 /* card  */
 .card {
   margin-bottom: 1.3125rem;
-  border: 0.092rem solid #346393;
+  border:1.49px solid #396393;
   .card-title {
-    padding: 0.84375rem 1.6875rem;
+    padding: 0.89375rem 1.6875rem;
     background-color: #2a5e91;
-    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-family:sans-serif;
     font-size: 1.3125rem;
-    font-weight: 500;
+    font-weight:800;
     color: #fff;
   }
   .card-description {
     padding: 1.375rem 1.5625rem;
     text-align: justify;
-    line-height: 1.54;
+    line-height: 1.53;
     background-color: #f6f6f6;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
     font-size: 1.0625rem;
@@ -61,6 +61,12 @@ word-spacing: 0.1700rem;
         margin-bottom: 1.5625rem;
     }
     .card-description{
-        word-spacing: 0.094975rem;
+        padding-bottom: 1.305rem ;
+        word-spacing:0.15529rem;
+    }
+}
+#StarNetwork{
+    .card-title{
+          padding: 0.99375rem 1.6875rem;
     }
 }
