@@ -21,8 +21,8 @@ img {
     position: absolute;
     right: 7.3125rem;
     top: 4.1875rem;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4.3125rem;
+    height: 4.3125rem;
     background-color: #d8d8d8;
     border-radius: 50%;
     cursor: pointer;
@@ -44,21 +44,30 @@ img {
     font-family: sans-serif;
     font-size: 1rem;
     .menu-container {
-      padding-top: 22px;
-      padding-left: 24px;
+      padding-top: 24px;
       li {
-        padding-bottom: 21px;
+      padding: 4px 0px 4px 24px;
+      margin-bottom: 9px;
         font-weight: 700;
         list-style: none;
+        line-height: 19px;
         cursor: pointer;
+        &:hover{
+            background-color: #aaaaaa;
+        }
+        &:last-child{
+            margin-bottom: 24px;
+        }
       }
+
+
     }
   }
 }
 .main {
   padding-right: 7.8125rem;
   padding-left: 9.125rem;
-  padding-bottom: 7.125rem;
+  padding-bottom: 6.825rem;
 }
 .card {
   display: inline-block;
@@ -102,7 +111,7 @@ img {
       background-color: #91b187;
       .size {
         position: absolute;
-        top: 28%;
+        top: 32.5%;
         right: 35%;
         font-weight: 700;
       }
@@ -118,7 +127,7 @@ img {
   }
   /* price  */
   .product-price {
-    margin-bottom: 0.9375rem;
+    margin-bottom: 0.4375rem;
     font-size: 1.275rem;
     font-weight: 200;
     color: #aaaaaa;
@@ -132,10 +141,13 @@ img {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+    transition: all 200ms linear;
+    &:hover{
+        transform: scale(1.1);
+    }
   }
 }
-.card:nth-child(4),
-:nth-child(8) {
+.card:nth-child(4n) {
   margin-right: 0;
 }
 /* product image css sprite  */
@@ -178,7 +190,7 @@ img {
   background-color: #000;
   .footer-container {
     display: inline-block;
-    padding: 38px 0px 40px 45px;
+    padding: 38px 0px 40px 54px;
     width: 100%;
     color: #fff;
     text-align: center;
@@ -186,7 +198,7 @@ img {
       display: inline-block;
       margin-right: 3.5375rem;
       font-family: sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.56rem;
       cursor: pointer;
     }
   }
