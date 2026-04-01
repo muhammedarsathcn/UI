@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #2a2b30;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nav {
+  padding: 4.9375rem 8.875rem 3.125rem 8.875rem;
+  position: relative;
+  .logo-container {
+    width: 11.75rem;
+  }
+  .ham-round {
+    position: absolute;
+    right: 7.3125rem;
+    top: 4.1875rem;
+    width: 4.3125rem;
+    height: 4.3125rem;
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .ham-container:hover .menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  .menu {
+    position: absolute;
+    top: 9.3rem;
+    right: 7.3525rem;
+    z-index: 1;
+    width: 16.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms linear;
+    background-color: #d8d8d8;
+    font-family: sans-serif;
+    font-size: 1rem;
+    .menu-container {
+      padding-top: 24px;
+      li {
+      padding: 4px 0px 4px 24px;
+      margin-bottom: 9px;
+        font-weight: 700;
+        list-style: none;
+        line-height: 19px;
+        cursor: pointer;
+        &:hover{
+            background-color: #aaaaaa;
+        }
+        &:last-child{
+            margin-bottom: 24px;
+        }
+      }
+
+
+    }
+  }
+}
+.main {
+  padding-right: 7.8125rem;
+  padding-left: 9.125rem;
+  padding-bottom: 6.825rem;
+}
+.card {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin-bottom: 3.75rem;
+  width: 20.1875rem;
+  min-height: 32.125rem;
+  margin-right: 3.1875rem;
+  font-family: sans-serif;
+  /* product view  */
+  .product-view {
+    height: 25.9375rem;
+    background-color: #24252a;
+    .star {
+      display: inline-block;
+      position: absolute;
+      top: 0.75rem;
+      right: 2.375rem;
+      color: #91b187;
+      font-size: 1.5625rem;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      width: 10px;
+      height: 10px;
+    }
+    .star:focus {
+      color: #adff2f;
+    }
+    /* size circle  */
+    .size-container {
+      position: absolute;
+      bottom: 6.25rem;
+      right: 1.25rem;
+      width: 3.5625rem;
+      height: 3.5625rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 1.4rem;
+      background-color: #91b187;
+      .size {
+        position: absolute;
+        top: 32.5%;
+        right: 35%;
+        font-weight: 700;
+      }
+    }
+  }
+  /* product title  */
+  .product-title {
+    margin-top: 0.9375rem;
+    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #fff;
+  }
+  /* price  */
+  .product-price {
+    margin-bottom: 0.4375rem;
+    font-size: 1.275rem;
+    font-weight: 200;
+    color: #aaaaaa;
+  }
+  /* add to cart btn  */
+  .add-to-cart-btn {
+    padding: 0.625rem 1.0625rem;
+    border: 1px solid #aaaaaa;
+    background-color: #2a2b30;
+    color: #aaaaaa;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 200ms linear;
+    &:hover{
+        transform: scale(1.1);
+    }
+  }
+}
+.card:nth-child(4n) {
+  margin-right: 0;
+}
+/* product image css sprite  */
+.product-img {
+  background: url("./assets/products/product_sprite.png") no-repeat;
+  transform: scale(0.55);
+  transform-origin: center center;
+}
+.bg-jacket {
+  width: 18.75rem;
+  height: 26rem;
+  position: relative;
+  left: 0.9375rem;
+  background-position: -0 -50.125rem;
+}
+.bg-shirt {
+  width: 18.875rem;
+  height: 25rem;
+  background-position: -0 -0;
+}
+.bg-sweatshirt {
+  width: 23.625rem;
+  height: 26.25rem;
+  background-position: -0 -76.125rem;
+  position: relative;
+  right: 1.875rem;
+}
+.bg-tShirt {
+  width: 25.5rem;
+  height: 25.125rem;
+  position: relative;
+  right: 2.5rem;
+  background-position: -0 -25rem;
+}
+/* footer  */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  .footer-container {
+    display: inline-block;
+    padding: 38px 0px 40px 54px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    li {
+      display: inline-block;
+      margin-right: 3.5375rem;
+      font-family: sans-serif;
+      font-size: 1.56rem;
+      cursor: pointer;
+    }
+  }
+}
