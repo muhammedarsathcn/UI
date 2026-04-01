@@ -21,12 +21,12 @@
 /* left section  */
 .left {
   float: left;
-  width: 54.75rem;
+  max-width: 61%;
 }
 /* right section  */
 .right {
   float: right;
-  width: 33.7875rem;
+  max-width: 37.6%;
 }
 /* card  */
 .card {
@@ -58,7 +58,7 @@ word-spacing: 0.1700rem;
 /* right section  */
 .right{
     .card{
-        margin-bottom: 1.5625rem;
+        margin-bottom: 1.5825rem;
     }
     .card-description{
         padding-bottom: 1.305rem ;
@@ -69,22 +69,17 @@ word-spacing: 0.1700rem;
     .card-title{
           padding: 0.99375rem 1.6875rem;
     }
+    .card-description{
+       line-height: 1.54;
+    }
 }
 /* responsive design  */
-@media(max-width:1440px){
-    .wrapper{
-        padding: 2rem;
-    }
-    .left{
-        width: 51rem;
-    }
-}
+
 @media(max-width:1024px){
     .wrapper{
         padding: 1rem;
     }
     .left,.right{
-        width: 100%;
-        float: none;
+        max-width: 100%;
     }
 }
