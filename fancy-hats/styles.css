@@ -9,8 +9,7 @@ body {
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient( rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("./assets/background-image.png") no-repeat 75% 5% fixed;
-  z-index: 0;
+  background: linear-gradient( rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("./assets/background-image.png") no-repeat 85% 5% fixed;
 }
 .menu-container {
   position: absolute;
@@ -24,7 +23,7 @@ body {
 .ham-menu {
   position: absolute;
   top: 40%;
-  left: 30%;
+  left: 31.5%;
   font-size: 3.9rem;
   cursor: pointer;
   .ham-icon {
@@ -82,9 +81,9 @@ body {
 .tagline {
   position: absolute;
   width: 43.75rem;
-  bottom: 2.5rem;
+  bottom: 2.8rem;
   color: #fff;
-  line-height: 1;
+  line-height: 0.97;
   left: 31.5%;
   font-size: 6.8rem;
   font-family: sans-serif;
