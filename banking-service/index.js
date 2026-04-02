@@ -31,24 +31,13 @@ function bankingSystem() {
       balance: 15000,
     },
     {
-      accountNo: "1005",
+      accountNo: "1001",
       cardNo: "7777888899990000",
       pin: "5678",
       balance: 20000,
     },
   ];
 
-  /**
-   * to check the cardNo and pin for a account
-   * @param  cardNo
-   * @param  pin
-   * @returns account which have the cardNo and pin matched
-   */
-  const validateUser = (cardNo, pin) => {
-    return accounts.find(
-      (account) => account.cardNo === cardNo && account.pin === pin,
-    );
-  };
   /**
    * function to check the validity of the entered amount by the user
    * @param  amount is the amount to check validity
@@ -67,6 +56,14 @@ function bankingSystem() {
     return true;
   }
 
+  /**
+   * to find the account by using cardNo
+   * @param cardNo of the user to find
+   * @returns account of the user
+   */
+  function findUser(cardNo) {
+    return accounts.find((account) => account.cardNo === cardNo);
+  }
   return {
     /**
      * to withdraw the amount from the given account
@@ -75,12 +72,8 @@ function bankingSystem() {
      * @param  amount to be withdraw
      * @returns (void) print the summary of the last transaction
      */
-    withdraw: (cardNo, pin, amountString) => {
-      const user = validateUser(cardNo, pin);
-      if (!user) {
-        alert("Invalid card number or pin");
-        return;
-      }
+    withdraw: (cardNo, amountString) => {
+      const user = findUser(cardNo);
       const amount = Number(amountString);
       if (!isAmountValid(amount)) {
         return;
@@ -89,12 +82,11 @@ function bankingSystem() {
         alert("Insufficient balance");
         return;
       }
-      user.balance -= amount;
+      user.balance = Number((user.balance - amount).toFixed(2));
       alert(
         `Withdrawal completed!!!\n Amount Withdraw: ${amount}\n Balance Amount: ${user.balance}`,
       );
     },
-
     /**
      * to deposit the amount from the given account
      * @param  cardNo  of the depositor
@@ -102,51 +94,81 @@ function bankingSystem() {
      * @param  amount to be deposit
      * @returns(void) print the summary of the last transaction
      */
-    deposit: (cardNo, pin, amountString) => {
-      const user = validateUser(cardNo, pin);
-      if (!user) {
-        alert("Invalid Card number or pin.");
-        return;
-      }
+    deposit: (cardNo, amountString) => {
+      const user = findUser(cardNo);
       const amount = Number(amountString);
       if (!isAmountValid(amount)) {
         return;
       }
-      user.balance += amount;
+      user.balance = Number((user.balance + amount).toFixed(2));
       alert(
         `Deposit completed!!!\n Amount Deposited: ${amount}\n Balance Amount: ${user.balance}`,
       );
     },
+    /**
+     * to find the account in which transaction going to happen
+     * @param accountNo is the account number of the ongoing transaction
+     * @returns account which is equal to the accountNo
+     */
+    findAccount: (accountNo) =>
+      accounts.find((account) => account.accountNo === accountNo),
+    /**
+     * to check the cardNo and pin for a account
+     * @param cardNo  of the user
+     * @param  pin  of the user
+     * @param accountNo of the user
+     * @returns account which have the cardNo and pin matched
+     */
+    validateUser: (accountNo, cardNo, pin) =>
+      accounts.find(
+        (account) =>
+          account.accountNo === accountNo &&
+          account.cardNo === cardNo &&
+          account.pin === pin,
+      ),
   };
 }
-
 //implementation of banking-service
 function startAtm() {
   //calling the bankingSystem function
   const simulatedBankingSystem = bankingSystem();
   let isExit = false;
   while (!isExit) {
-    const choice = prompt(
-      `Enter:
+    const accountNo = prompt("Enter the account No: ");
+    const account = simulatedBankingSystem.findAccount(accountNo);
+    if (account) {
+      const choice = prompt(
+        `Enter:
 1 for withdraw
 2 for Deposit
 3 for exit`,
-    );
-    if (choice === "3") {
-      return "Transaction completed";
-    }
-    const cardNo = prompt("Enter the card number");
-    const pin = prompt("Enter the pin");
-    const amount = prompt("Enter the amount");
-    switch (choice) {
-      case "1":
-        simulatedBankingSystem.withdraw(cardNo, pin, amount);
-        break;
-      case "2":
-        simulatedBankingSystem.deposit(cardNo, pin, amount);
-        break;
-      default:
+      );
+      if (choice === "3") {
+        return "Transaction completed";
+      }
+      if (!["1", "2", "3"].includes(choice)) {
         alert("Enter valid choice");
+        continue;
+      }
+      const cardNo = prompt("Enter the card number");
+      const pin = prompt("Enter the pin");
+      if (simulatedBankingSystem.validateUser(accountNo, cardNo, pin)) {
+        const amount = prompt("Enter the amount");
+        switch (choice) {
+          case "1":
+            simulatedBankingSystem.withdraw(cardNo, amount);
+            break;
+          case "2":
+            simulatedBankingSystem.deposit(cardNo, amount);
+            break;
+          default:
+            alert("Enter valid choice");
+        }
+      } else {
+        alert("Invalid account or credentials");
+      }
+    } else {
+      alert("Invalid account number");
     }
   }
 }
