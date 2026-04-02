@@ -1,0 +1,81 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: fill;
+}
+/* header  */
+.header {
+  padding: 2.1625rem 2.3125rem 2.0625rem 2.3125rem;
+  background-color: #371e63;
+  color: #fff;
+  font-family: "Google Sans Flex", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+/* wrapper  */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  row-gap: 0.95rem;
+  column-gap: 0.9375rem;
+  overflow-y: scroll;
+  height: 78.4vh;
+  padding: 4.25rem 5.1875rem;
+}
+/* fallback text  */
+.fallback-text {
+  display: none;
+}
+.hide {
+  display: block;
+}
+/* card  */
+.card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex: 1 1 calc((100% / 3) - 1.87rem);
+  column-gap: 1.5rem;
+  min-height: 6.54rem;
+  padding: 0.875rem;
+  background-color: #5266af;
+  .profile {
+    width: 4.4375rem;
+    height: 4.4375rem;
+  }
+  .name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+  }
+  .email {
+    font-weight: 100;
+    font-size: 0.9rem;
+    color: #e2e5f1;
+  }
+}
+/* responsive design layouts */
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 1.875rem 1.25rem;
+  }
+  .card {
+    flex: 0 0 calc((100% / 2) - 1.0625rem);
+  }
+}
+@media (max-width:768px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
