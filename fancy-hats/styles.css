@@ -9,10 +9,9 @@ body {
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("./assets/background-image.png") no-repeat 75% 5% fixed;
+  background: linear-gradient( rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("./assets/background-image.png") no-repeat 75% 5% fixed;
   z-index: 0;
 }
-
 .menu-container {
   position: absolute;
   top: 2.7rem;
@@ -44,14 +43,15 @@ body {
 }
 .logo-container {
   text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding-top:2.5rem;
+  padding-bottom: 0.8rem;
+  transform: scale(0.9);
 }
 .menu-list-container {
   position: absolute;
   top: 6rem;
   width: 16.9375rem;
-  height: 47.435rem;
+  height: 48.935rem;
   cursor: pointer;
   border-top-right-radius: 2.1875rem;
   border-bottom-right-radius: 2.1875rem;
@@ -59,7 +59,7 @@ body {
   transform: translateX(-100%);
   transition: all 500ms linear;
   li {
-    padding: 0.6375rem 0;
+    padding: 0.7375rem 0;
     font-size: 1.25rem;
     cursor: pointer;
     font-family: sans-serif;
