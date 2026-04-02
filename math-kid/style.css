@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 31px;
+  background-color: #b4df91;
+  h3{
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+}
+.wrapper{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 55vh;
+.page-title{
+        font-size: 50px;
+    }
+}
