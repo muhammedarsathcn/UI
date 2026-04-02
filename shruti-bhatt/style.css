@@ -208,7 +208,7 @@ img {
   .project__figure {
     width: 90%;
   }
-  .customers{
+  .customers {
     margin-bottom: 40px;
   }
   .customers__title {
@@ -217,22 +217,22 @@ img {
   }
   .companies {
     justify-content: space-around;
-    padding:0 30px;
+    padding: 0 30px;
     gap: 50px;
   }
   .companies__logo {
     width: 70px;
   }
-  #Spotify{
+  #Spotify {
     width: 100px;
   }
-  #Adidas{
-    width:60px;
+  #Adidas {
+    width: 60px;
   }
-  #Lufthansa{
+  #Lufthansa {
     width: 100px;
   }
-  .footer{
+  .footer {
     margin-top: 150px;
   }
   .first__line {
@@ -240,7 +240,7 @@ img {
     width: 10%;
   }
   .second__line {
-  width: 170px;
+    width: 170px;
   }
   .footer__icons {
     gap: 0.5rem;
@@ -253,7 +253,7 @@ img {
   .footer__icons-icon {
     font-size: 1.4rem;
   }
-  .footer__tag{
+  .footer__tag {
     font-size: 1rem;
     margin-bottom: 0;
   }
