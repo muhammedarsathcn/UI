@@ -39,7 +39,7 @@ function bankingSystem() {
   ];
 
   /**
-   *to check the cardNo and pin for a account
+   * to check the cardNo and pin for a account
    * @param  cardNo
    * @param  pin
    * @returns account which have the cardNo and pin matched
@@ -49,6 +49,23 @@ function bankingSystem() {
       (account) => account.cardNo === cardNo && account.pin === pin,
     );
   };
+  /**
+   * function to check the validity of the entered amount by the user
+   * @param  amount is the amount to check validity
+   * @returns boolean for the validation of the amount
+   */
+  function isAmountValid(amount) {
+    if (isNaN(amount)) {
+      alert("Amount is invalid");
+      return false;
+    }
+    if (amount <= 0) {
+      alert("Amount should be greater than zero");
+      return false;
+    }
+
+    return true;
+  }
 
   return {
     /**
@@ -58,14 +75,14 @@ function bankingSystem() {
      * @param  amount to be withdraw
      * @returns (void) print the summary of the last transaction
      */
-    withdraw: (cardNo, pin, amount) => {
+    withdraw: (cardNo, pin, amountString) => {
       const user = validateUser(cardNo, pin);
       if (!user) {
         alert("Invalid card number or pin");
         return;
       }
-      if (amount <= 0) {
-        alert("Amount should be greater than zero");
+      const amount = Number(amountString);
+      if (!isAmountValid(amount)) {
         return;
       }
       if (user.balance < amount) {
@@ -85,14 +102,14 @@ function bankingSystem() {
      * @param  amount to be deposit
      * @returns(void) print the summary of the last transaction
      */
-    deposit: (cardNo, pin, amount) => {
+    deposit: (cardNo, pin, amountString) => {
       const user = validateUser(cardNo, pin);
       if (!user) {
         alert("Invalid Card number or pin.");
         return;
       }
-      if (amount <= 0) {
-        alert("Amount should be more than zero.");
+      const amount = Number(amountString);
+      if (!isAmountValid(amount)) {
         return;
       }
       user.balance += amount;
@@ -103,6 +120,7 @@ function bankingSystem() {
   };
 }
 
+//implementation of banking-service
 function startAtm() {
   //calling the bankingSystem function
   const simulatedBankingSystem = bankingSystem();
@@ -115,12 +133,11 @@ function startAtm() {
 3 for exit`,
     );
     if (choice === "3") {
-      return;
+      return "Transaction completed";
     }
     const cardNo = prompt("Enter the card number");
     const pin = prompt("Enter the pin");
     const amount = prompt("Enter the amount");
-
     switch (choice) {
       case "1":
         simulatedBankingSystem.withdraw(cardNo, pin, amount);
