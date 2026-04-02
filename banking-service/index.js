@@ -4,7 +4,7 @@
  * @returns deposit function to deposit the amount
  */
 function bankingSystem() {
-    //dummy accounts
+  //dummy accounts
   const accounts = [
     {
       accountNo: "1001",
@@ -40,8 +40,8 @@ function bankingSystem() {
 
   /**
    *to check the cardNo and pin for a account
-   * @param {*} cardNo
-   * @param {*} pin
+   * @param  cardNo
+   * @param  pin
    * @returns account which have the cardNo and pin matched
    */
   const validateUser = (cardNo, pin) => {
@@ -54,66 +54,83 @@ function bankingSystem() {
     /**
      * to withdraw the amount from the given account
      * @param  cardNo  of the withdrawer
-     * @param {*} pin  of the withdrawer
-     * @param {*} amount to be withdraw
+     * @param  pin  of the withdrawer
+     * @param  amount to be withdraw
      * @returns (void) print the summary of the last transaction
      */
     withdraw: (cardNo, pin, amount) => {
       const user = validateUser(cardNo, pin);
       if (!user) {
-        console.log("Invalid card number or pin");
+        alert("Invalid card number or pin");
         return;
       }
       if (amount <= 0) {
-        console.log("Amount should be greater than zero");
+        alert("Amount should be greater than zero");
         return;
       }
       if (user.balance < amount) {
-        console.log("Insufficient balance");
+        alert("Insufficient balance");
         return;
       }
       user.balance -= amount;
-      console.log("Withdrawal completed!!!");
-      console.log("Amount Withdrawn:", amount);
-      console.log("Balance Amount", user.balance);
+      alert(
+        `Withdrawal completed!!!\n Amount Withdraw: ${amount}\n Balance Amount: ${user.balance}`,
+      );
     },
 
     /**
      * to deposit the amount from the given account
      * @param  cardNo  of the depositor
-     * @param {*} pin  of the depositor
-     * @param {*} amount to be deposit
+     * @param  pin  of the depositor
+     * @param  amount to be deposit
      * @returns(void) print the summary of the last transaction
      */
     deposit: (cardNo, pin, amount) => {
       const user = validateUser(cardNo, pin);
       if (!user) {
-        console.log("Invalid Card number or pin.");
+        alert("Invalid Card number or pin.");
         return;
       }
       if (amount <= 0) {
-        console.log("Amount should be more than zero.");
+        alert("Amount should be more than zero.");
         return;
       }
       user.balance += amount;
-      console.log("Deposit completed!!!");
-      console.log("Amount Deposited: ", amount);
-      console.log("Balance Amount", user.balance);
+      alert(
+        `Deposit completed!!!\n Amount Deposited: ${amount}\n Balance Amount: ${user.balance}`,
+      );
     },
   };
 }
 
-//calling the bankingSystem function
-const simulatedATM = bankingSystem();
-simulatedATM.withdraw;
+function startAtm() {
+  //calling the bankingSystem function
+  const simulatedBankingSystem = bankingSystem();
+  let isExit = false;
+  while (!isExit) {
+    const choice = prompt(
+      `Enter:
+1 for withdraw
+2 for Deposit
+3 for exit`,
+    );
+    if (choice === "3") {
+      return;
+    }
+    const cardNo = prompt("Enter the card number");
+    const pin = prompt("Enter the pin");
+    const amount = prompt("Enter the amount");
 
-//credentials check
-simulatedATM.withdraw("1111222233334444", "1236", 11001);
-// ATM Withdrawal
-simulatedATM.withdraw("1111222233334444", "1234", 1000);
-//ATM Deposit
-simulatedATM.deposit("1111222233334444", "1234", 7000);
-//ATM Balance check
-simulatedATM.withdraw("1111222233334444", "1234", 11001);
-//ATM Deposit check
-simulatedATM.deposit("1111222233334444", "1234", 0);
+    switch (choice) {
+      case "1":
+        simulatedBankingSystem.withdraw(cardNo, pin, amount);
+        break;
+      case "2":
+        simulatedBankingSystem.deposit(cardNo, pin, amount);
+        break;
+      default:
+        alert("Enter valid choice");
+    }
+  }
+}
+startAtm();
