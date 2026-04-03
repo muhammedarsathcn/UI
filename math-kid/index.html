@@ -10,8 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
     <title>Math Kids</title>
   </head>
   <body>
@@ -22,7 +22,7 @@
     <!-- wrapper starts  -->
     <main class="wrapper">
       <!-- section one starts  -->
-      <section class="section one">
+      <section class="section one" id="step1">
         <p class="section-title">1.Choose a Shape</p>
         <div class="shapes">
           <span class="circle"></span>
@@ -34,32 +34,32 @@
       <!-- section one ends  -->
 
       <!-- section two starts  -->
-      <section class="section two">
+      <section class="section two" id="step2">
         <p class="section-title">2.Enter</p>
-        <input type="number" class="input-field" />
+        <input type="text" class="input-field" />
         <button class="section-two-btn">CALCULATE</button>
       </section>
       <!-- section two ends  -->
 
       <!-- section three starts  -->
-      <section class="section three">
-        <span class="square"></span>
+      <section class="section three" id="step3">
+        <span class="section-shape"></span>
         <section class="measurements">
           <p class="section-title">Square</p>
-          <article class="measurement">
-            <span class="left-side">SIDE </span>
+          <article class="measurement" id="side">
+            <span class="left-side" id="side">SIDE </span>
             <span class="middle">S</span>
-            <span class="right-side">5 cm</span>
+            <span class="right-side"></span>
           </article>
-          <article class="measurement">
+          <article class="measurement" id = "area">
             <span class="left-side">AREA </span>
-            <span class="middle">S * S</span>
-            <span class="right-side">25 sq cm</span>
+            <span class="middle"></span>
+            <span class="right-side"></span>
           </article>
-          <article class="measurement">
+          <article class="measurement" id="perimeter">
             <span class="left-side">PERIMETER </span>
-            <span class="middle">4 * S</span>
-            <span class="right-side">20 cm</span>
+            <span class="middle"></span>
+            <span class="right-side"></span>
           </article>
         </section>
         <button class="section-three-btn">START AGAIN</button>
