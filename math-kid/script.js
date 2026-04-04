@@ -1,4 +1,4 @@
-const shapes = document.querySelectorAll(".shapes span");
+const shapes = document.querySelectorAll(".shapes .shape");
 const nextBtn = document.querySelector(".section-one-btn");
 const step1 = document.querySelector("#step1");
 const step2 = document.querySelector("#step2");
@@ -18,6 +18,7 @@ const startAgainBtn = document.querySelector("#step3 .section-three-btn");
 const shapesData = {
   circle: {
     name: "Circle",
+    title: "2. Enter Radius",
     area: (r) => Math.PI * r * r,
     perimeter: (r) => 2 * Math.PI * r,
     side: (s) => `${s}`,
@@ -27,6 +28,7 @@ const shapesData = {
 
   square: {
     name: "Square",
+    title: "2. Enter Side",
     area: (s) => s * s,
     perimeter: (s) => 4 * s,
     formulaArea: "s × s",
@@ -35,6 +37,7 @@ const shapesData = {
 
   triangle: {
     name: "Equilateral Triangle",
+    title: "2. Enter Side (Base & Height)",
     area: (a) => (Math.sqrt(3) / 4) * a * a,
     perimeter: (a) => 3 * a,
     formulaArea: "0.433 × s x s",
@@ -49,25 +52,19 @@ let selectedShape = null;
 shapes.forEach((shape) => {
   shape.addEventListener("click", () => {
     shapes.forEach((s) => s.classList.remove("selected"));
-
     shape.classList.add("selected");
-    selectedShape = shape.className.split(" ")[0];
-
+    console.log(shape.classList)
+    selectedShape = shape.className.split(" ")[1];
     nextBtn.style.display = "inline-block";
   });
 });
 
 nextBtn.addEventListener("click", () => {
+  console.log(selectedShape);
   step1.style.display = "none";
   step2.style.display = "flex";
   console.log("Inside btn Listener", selectedShape);
-  if (selectedShape === "circle") {
-    step2Title.textContent = "2.Enter Radius";
-  } else if (selectedShape === "triangle") {
-    step2Title.textContent = "2.Enter Side (Base & Height)";
-  } else {
-    step2Title.textContent = "2.Enter Side";
-  }
+  step2Title.textContent = shapesData[selectedShape].title;
 });
 
 calculateBtn.addEventListener("click", () => {
@@ -89,6 +86,9 @@ calculateBtn.addEventListener("click", () => {
 
   step3Shape.classList.remove("section-shape");
   step3Shape.classList.add(selectedShape);
+
+  step3Shape.style.display = "block";
+  step3Shape.style.position = "relative";
   step3Title.textContent = shapesData[selectedShape].name;
 
   sideRight.textContent = side + " cm";

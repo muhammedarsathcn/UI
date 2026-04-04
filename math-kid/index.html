@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,9 +29,17 @@
       <section class="section one" id="step1">
         <p class="section-title">1.Choose a Shape</p>
         <div class="shapes">
-          <span class="circle"></span>
-          <span class="triangle"></span>
-          <span class="square"></span>
+          <span class="shape circle">
+            <i class="fa-solid fa-check tick"></i>
+          </span>
+
+          <span class="shape triangle" >
+            <i class="fa-solid fa-check tick"></i>
+          </span>
+
+          <span class="shape square">
+            <i class="fa-solid fa-check tick"></i>
+          </span>
         </div>
         <button class="section-one-btn">NEXT</button>
       </section>
@@ -35,7 +47,7 @@
 
       <!-- section two starts  -->
       <section class="section two" id="step2">
-        <p class="section-title">2.Enter</p>
+        <p class="section-title"></p>
         <input type="text" class="input-field" />
         <button class="section-two-btn">CALCULATE</button>
       </section>
@@ -45,13 +57,13 @@
       <section class="section three" id="step3">
         <span class="section-shape"></span>
         <section class="measurements">
-          <p class="section-title">Square</p>
+          <p class="section-title"></p>
           <article class="measurement" id="side">
             <span class="left-side" id="side">SIDE </span>
             <span class="middle">S</span>
             <span class="right-side"></span>
           </article>
-          <article class="measurement" id = "area">
+          <article class="measurement" id="area">
             <span class="left-side">AREA </span>
             <span class="middle"></span>
             <span class="right-side"></span>
