@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* header  */
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  .header-title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    .profile-name {
+      font-size: 0.625rem;
+    }
+    .profile-img-container {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+/* main container  */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 26px;
+  padding-left: 16.2%;
+  padding-right: 16.2%;
+  padding-top: 24px;
+  padding-bottom: 20px;
+  .movie {
+    flex: 71%;
+    .video-container {
+      width: 100%;
+      height: 385px;
+      object-fit: cover;
+    }
+    .movie-title {
+      padding-top: 15px;
+      padding-bottom: 5px;
+      font-size: 23px;
+      font-weight: 500;
+    }
+    .movie-description {
+      color: #2e2e2e;
+      font-size: 12.5px;
+      line-height: 1.3rem;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #e2e2e2;
+    }
+    .comments {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 25px;
+
+      .comments-title {
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 10px;
+      }
+
+      .comment {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        .comment-profile {
+          width: 2.5rem;
+          border-radius: 50%;
+          flex: 0 0 2.5rem;
+        }
+        .comment-profile img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .comment-name {
+          font-size: 13.5px;
+          font-weight: 600;
+          padding-bottom: 5px;
+        }
+        .comment-description {
+          color: #2e2e2e;
+          font-size: 11.8px;
+        }
+      }
+    }
+  }
+  .posters {
+    flex: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    .posters-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .poster-container {
+      width: 270px;
+      height: 379px;
+    }
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px 0;
+  background-color: #000;
+  color: #fff;
+  .footer-copyright {
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .footer-company-name {
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+}
+
+.bottom-container {
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  height: 20px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chat-icon {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 67px;
+  height: 67px;
+  border-radius: 50%;
+  background-color: #b53fa9;
+  cursor: pointer;
+  transition: all 300ms linear;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  i {
+    font-size: 26px;
+    color: #fff;
+  }
+}
+
+@media(max-width:1024px){
+  .container{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    
+  }
+}
+
+@media (max-width:990px){
+  .container{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    flex-direction: column;
+    .movie {
+      .video-container {
+        height: 250px;
+      }
+    }
+    .posters{
+      /* flex: 100%; */
+      width: 100%;
+      /* background-color: green; */
+      .poster-container{
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
