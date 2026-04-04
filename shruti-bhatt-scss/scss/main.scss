@@ -1,0 +1,330 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "responsive";
+@use "functions" as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color;
+  color: $primary-color;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.customers {
+  @include center;
+  margin-bottom: 5.875rem;
+
+  &__title {
+    color: $secondary-color;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 2.8rem;
+
+    &-highlight {
+      color: $customer-highlight;
+    }
+  }
+}
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 66vh;
+  &__title {
+    order: 2;
+    font-size: 10.625rem;
+    font-weight: 300;
+    letter-spacing: 1.3;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  &__title-highlight {
+    font-weight: 500;
+  }
+  &__role {
+    order: 3;
+    margin-top: 0.5rem;
+    color: $secondary-color;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+  }
+  &__role-highlight {
+    color: #5c8fdc;
+  }
+  &__mailLink {
+    order: 1;
+    align-self: flex-end;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+    margin-right: 11.3rem;
+    color: $primary-color;
+    transition: all 200ms linear;
+    text-decoration: none;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__email {
+    font-size: 2rem;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+}
+.project {
+  @include center;
+  margin-left: 7.625rem;
+  margin-right: 7.625rem;
+  flex-wrap: wrap;
+  row-gap: 1.875rem;
+  column-gap: 2.1875rem;
+  margin-bottom: 9.0625rem;
+  &__figure {
+    width: column-width(3, (1.875 * 2) rem);
+  }
+}
+
+.companies {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 5%;
+
+  &__logo {
+    width: 6.5625rem;
+    transform: scale(1.1);
+    transition: all 200ms linear;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+
+.spotify {
+  width: 7.5rem;
+}
+
+.adidas {
+  width: 5rem;
+}
+
+.lufthansa {
+  width: 8.625rem;
+}
+
+.footer {
+  @include center;
+  flex-direction: column;
+  margin-top: 17.8rem;
+
+  &__line {
+    @include center;
+    padding-left: 0.3125rem;
+    gap: 2.5rem;
+  }
+
+  &__icons {
+    @include center;
+    margin-top: 7rem;
+    margin-bottom: 5.625rem;
+    gap: 1.1rem;
+    cursor: pointer;
+    .icon__circle {
+      transition: all 200ms linear;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    &-icon {
+      color: $primary-color;
+      font-size: 2rem;
+    }
+  }
+
+  &__tag {
+    margin-bottom: 9.25rem;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+/* separators */
+
+.first__line {
+  display: inline-block;
+  width: 2.5rem;
+  height: 0.0625rem;
+  background-color: $primary-color;
+}
+
+.second__line {
+  display: inline-block;
+  width: 13.75rem;
+  height: 0.0625rem;
+  background-color: $primary-color;
+}
+
+.icon__circle {
+  @include center;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.0625rem solid $primary-color;
+  border-radius: 50%;
+  padding: 0.95rem;
+}
+
+.custom__icon {
+  font-family: "Times New Roman", Times, serif;
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .hero {
+    padding-top: 9.375rem;
+    height: auto;
+
+    &__title {
+      order: 1;
+      font-size: 6.875rem;
+      text-align: center;
+    }
+
+    &__role {
+      order: 2;
+      font-size: 2.2rem;
+      text-align: center;
+    }
+
+    &__mailLink {
+      order: 3;
+      align-self: center;
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+      margin-right: 0;
+    }
+  }
+
+  .project__figure {
+    width:column-width(2, (1*2)rem);
+  }
+
+  .companies__logo {
+    width: 5.625rem;
+  }
+}
+
+@media (max-width: $medium-tablet-breakpoint) {
+  .project {
+    margin-left: 1.9rem;
+    margin-right: 1.9rem;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .hero {
+    padding-top: 7.5rem;
+    padding-bottom: 2.5rem;
+
+    &__title {
+      font-size: 3.4rem;
+      padding-bottom: 0;
+    }
+
+    &__role {
+      font-size: 1.4rem;
+      margin-top: 0.7rem;
+      padding-bottom: 0.0625rem;
+    }
+
+    &__email {
+      margin-top: 0.9rem;
+      font-size: 1rem;
+    }
+  }
+
+  .project {
+    column-gap: 0.9375rem;
+    margin-bottom: 3.75rem;
+    margin-left: 1.9rem;
+    margin-right: 1.9rem;
+    &__figure {
+      width: 100%;
+    }
+  }
+
+  .customers {
+    margin-bottom: 2.5rem;
+
+    &__title {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  }
+
+  .companies {
+    justify-content: space-around;
+    padding: 0 1.875rem;
+    gap: 3.125rem;
+
+    &__logo {
+      width: 4.375rem;
+    }
+  }
+
+  .spotify {
+    width: 6.25rem;
+  }
+
+  .adidas {
+    width: 3rem;
+  }
+
+  .lufthansa {
+    width: 6.25rem;
+  }
+
+  .footer {
+    margin-top: 9.375rem;
+
+    &__line {
+      padding-left: 0;
+      gap: 1.5625rem;
+    }
+
+    &__icons {
+      gap: 0.8rem;
+      margin-bottom: 1.25rem;
+
+      &-icon {
+        font-size: 1.4rem;
+      }
+    }
+
+    &__tag {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.625rem;
+    }
+  }
+
+  .first__line {
+    margin-top: 0;
+    width: 10%;
+  }
+
+  .second__line {
+    width: 10.625rem;
+  }
+
+  .icon__circle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
