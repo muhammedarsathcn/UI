@@ -1,3 +1,4 @@
+// to fetch the posters
 const fetchPosters = async () => {
   try {
     const response = await fetch("./data/posters.json");
@@ -7,7 +8,9 @@ const fetchPosters = async () => {
     console.error("Error message:", err);
   }
 };
-const fetchVideo = async () => {
+
+// to fetch the movie and its comments
+const fetchMovie = async () => {
   try {
     const response = await fetch("./data/video.json");
     const data = await response.json();
@@ -17,10 +20,10 @@ const fetchVideo = async () => {
   }
 };
 const posters = await fetchPosters();
-const movie = await fetchVideo();
+const movie = await fetchMovie();
 const comments = movie.comments;
-console.log(comments);
 
+// DOM selections
 const commentsContainer = document.querySelector(".comments");
 const movieVideo = document.querySelector(".video-container source");
 movieVideo.src = movie.videoUrl;
@@ -31,37 +34,39 @@ const postersContainer = document.querySelector(".posters");
 movieTitle.textContent = movie.title;
 movieDescription.textContent = movie.description;
 
+// displaying the movie, comments and posters
 const commentFragment = document.createDocumentFragment();
 comments.forEach((comment) => {
-  commentsContainer.insertAdjacentHTML(
-    "beforeend",
-    `
-      <article class="comment">
-        <figure class="comment-profile">
-          <img src="${comment.image}" alt="${comment.name}" />
-        </figure>
-        <span>
-          <p class="comment-name">${comment.name}</p>
-          <p class="comment-description">
-            ${comment.comment}
-          </p>
-        </span>
-      </article>
-      `,
-  );
+  const article = document.createElement("article");
+  article.className = "comment";
+  const figure = document.createElement("figure");
+  figure.className = "comment-profile";
+  const img = document.createElement("img");
+  img.src = comment.image;
+  img.alt = comment.name;
+  figure.appendChild(img);
+  const span = document.createElement("span");
+  const name = document.createElement("p");
+  name.className = "comment-name";
+  name.textContent = comment.name;
+  const description = document.createElement("p");
+  description.className = "comment-description";
+  description.textContent = comment.comment;
+  span.appendChild(name);
+  span.appendChild(description);
+  article.appendChild(figure);
+  article.appendChild(span);
+  commentFragment.appendChild(article);
 });
 commentsContainer.appendChild(commentFragment);
 
 const postersFragments = document.createDocumentFragment();
-
 posters.forEach((poster) => {
   const figure = document.createElement("figure");
   figure.className = "poster-container";
-
   const img = document.createElement("img");
   img.src = poster.imageUrl;
   img.alt = poster.title;
-
   figure.appendChild(img);
   postersFragments.appendChild(figure);
 });
