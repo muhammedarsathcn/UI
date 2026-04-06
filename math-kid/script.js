@@ -1,3 +1,4 @@
+// Query selectors for all elements 
 const shapes = document.querySelectorAll(".shapes .shape");
 const nextBtn = document.querySelector(".section-one-btn");
 const step1 = document.querySelector("#step1");
@@ -15,6 +16,7 @@ const areaRight = document.querySelector("#area .right-side");
 const perimeterMiddle = document.querySelector("#perimeter .middle");
 const perimeterRight = document.querySelector("#perimeter .right-side");
 const startAgainBtn = document.querySelector("#step3 .section-three-btn");
+//shape's data
 const shapesData = {
   circle: {
     name: "Circle",
@@ -41,16 +43,17 @@ const shapesData = {
     title: "2. Enter Side (Base & Height)",
     area: (a) => (Math.sqrt(3) / 4) * a * a,
     perimeter: (a) => 3 * a,
-    formulaArea: "0.433 × s x s",
+    formulaArea: "0.433 × s × s",
     formulaPerimeter: "3 × s",
     formulaSide:"s"
   },
 };
+// initially step2 and step3 hide 
 step2.style.display = "none";
 step3.style.display = "none";
 
+// to select the shape which is selected by the user 
 let selectedShape = null;
-
 shapes.forEach((shape) => {
   console.log(shape)
   shape.addEventListener("click", () => {
@@ -62,6 +65,7 @@ shapes.forEach((shape) => {
   });
 });
 
+// event listener for the next button to show the input section 
 nextBtn.addEventListener("click", () => {
   console.log(selectedShape);
   step1.style.display = "none";
@@ -70,6 +74,7 @@ nextBtn.addEventListener("click", () => {
   step2Title.textContent = shapesData[selectedShape].title;
 });
 
+// event listener for the calculate button to calculate radius, perimeter and area 
 calculateBtn.addEventListener("click", () => {
   const stringValue = calculateInputField.value;
 
@@ -77,14 +82,12 @@ calculateBtn.addEventListener("click", () => {
     alert("Enter the value");
     return;
   }
-
   const side = Number(stringValue);
 
   if (isNaN(side)) {
     alert("Invalid input.");
     return;
   }
-
   step2.style.display = "none";
   step3Shape.classList.remove("section-shape");
   step3Shape.classList.add(selectedShape);
@@ -107,6 +110,7 @@ calculateBtn.addEventListener("click", () => {
   step3.style.display = "flex";
 });
 
+// event listener for cleaning all stored data and start again from the first section 
 startAgainBtn.addEventListener("click", () => {
   shapes.forEach((shape) => {
     shape.classList.remove("selected");
