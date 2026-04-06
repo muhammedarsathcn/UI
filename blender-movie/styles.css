@@ -17,12 +17,16 @@ img {
 /* header  */
 .header-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  z-index: 5;
+  padding: 1rem 17.5rem;
+  box-shadow: 0px 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
   .header-title {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
   }
   .profile-container {
@@ -48,48 +52,69 @@ img {
   display: flex;
   justify-content: center;
   align-items: start;
-  gap: 26px;
+  gap: 1.625rem;
   padding-left: 16.2%;
   padding-right: 16.2%;
-  padding-top: 24px;
-  padding-bottom: 20px;
+  padding-top: 85px;
+  padding-bottom: 1.25rem;
+  background-color: #f5f5f5;
   .movie {
     flex: 71%;
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 26%;
+      left: 40%;
+      z-index: 2;
+      width: 72px;
+      height: 72px;
+      border: 5px solid #ffff;
+      border-radius: 50%;
+      cursor: pointer;
+
+      i {
+        font-size: 32px;
+        color: #ffff;
+        cursor: pointer;
+      }
+    }
     .video-container {
       width: 100%;
-      height: 385px;
+      height: 24.0625rem;
       object-fit: cover;
     }
     .movie-title {
-      padding-top: 15px;
-      padding-bottom: 5px;
-      font-size: 23px;
+      padding-top: 0.9375rem;
+      padding-bottom: 0.3125rem;
+      font-size: 1.4375rem;
       font-weight: 500;
     }
     .movie-description {
       color: #2e2e2e;
-      font-size: 12.5px;
+      font-size: 0.7813rem;
       line-height: 1.3rem;
-      padding-bottom: 25px;
-      border-bottom: 1px solid #e2e2e2;
+      padding-bottom: 1.5625rem;
+      border-bottom: 0.0625rem solid #e2e2e2;
     }
     .comments {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      padding-top: 25px;
+      gap: 1.25rem;
+      padding-top: 1.5625rem;
 
       .comments-title {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: 600;
-        padding-bottom: 10px;
+        padding-bottom: 0.625rem;
       }
 
       .comment {
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        gap: 10px;
+        gap: 0.625rem;
         .comment-profile {
           width: 2.5rem;
           border-radius: 50%;
@@ -103,13 +128,13 @@ img {
           object-position: center;
         }
         .comment-name {
-          font-size: 13.5px;
+          font-size: 0.8438rem;
           font-weight: 600;
-          padding-bottom: 5px;
+          padding-bottom: 0.3125rem;
         }
         .comment-description {
           color: #2e2e2e;
-          font-size: 11.8px;
+          font-size: 0.7375rem;
         }
       }
     }
@@ -120,33 +145,42 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem;
     .posters-title {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 600;
     }
 
     .poster-container {
-      width: 270px;
-      height: 379px;
+      width: 16.875rem;
+      height: 23.6875rem;
     }
   }
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 24px 0;
-  background-color: #000;
-  color: #fff;
+  padding: 1.5rem 17.5625rem;
+  background-color: #222222;
+
   .footer-copyright {
-    font-size: 13.5px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8438rem;
     font-weight: 600;
+    span {
+      font-size: 17px;
+    }
   }
   .footer-company-name {
-    font-size: 13.5px;
+    font-size: 0.8438rem;
     font-weight: 600;
+    color: #fff;
   }
 }
 
@@ -156,19 +190,19 @@ img {
   bottom: 0;
   z-index: 2;
   width: 100%;
-  height: 20px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  height: 1.25rem;
+  box-shadow: 0px 6px 12px #00000025;
 }
 
 .chat-icon {
   position: fixed;
-  bottom: 30px;
-  right: 40px;
+  bottom: 1.875rem;
+  right: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 67px;
-  height: 67px;
+  width: 4.1875rem;
+  height: 4.1875rem;
   border-radius: 50%;
   background-color: #b53fa9;
   cursor: pointer;
@@ -178,44 +212,58 @@ img {
   }
 
   i {
-    font-size: 26px;
+    font-size: 1.625rem;
     color: #fff;
   }
 }
 
-@media(max-width:1024px){
-  .container{
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 1rem 1rem;
+    .profile-name{
+      display: none;
+    }
+  }
+  .container {
     padding-left: 5rem;
     padding-right: 5rem;
-    
+  }
+  .footer-container{
+ padding: 1.5rem 1.5rem;
   }
 }
 
-@media (max-width:990px){
-  .container{
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
 
 @media (max-width: 768px) {
+  .header-container{
+    width: 100%;
+  }
   .container {
     padding-left: 0.7rem;
     padding-right: 0.7rem;
     flex-direction: column;
     .movie {
       .video-container {
-        height: 250px;
+        height: 15.625rem;
       }
     }
-    .posters{
-      /* flex: 100%; */
+    .comments{
+      padding-bottom: 30px;
+            border-bottom: 0.0625rem solid #e2e2e2;
+
+    }
+    .posters {
       width: 100%;
-      /* background-color: green; */
-      .poster-container{
+      .poster-container {
         width: 100%;
         flex: 1 1 100%;
       }
+    }
+  }
+  .footer-container{
+    flex-direction: column;
+    .footer-company-name{
+      font-size: 24px;
     }
   }
 }

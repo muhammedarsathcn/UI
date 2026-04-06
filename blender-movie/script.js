@@ -25,7 +25,8 @@ const comments = movie.comments;
 
 // DOM selections
 const commentsContainer = document.querySelector(".comments");
-const movieVideo = document.querySelector(".video-container source");
+const playPauseBtn = document.querySelector(".circle");
+const movieVideo = document.querySelector(".video-container");
 movieVideo.src = movie.videoUrl;
 document.querySelector(".video-container").load();
 const movieTitle = document.querySelector(".movie-title");
@@ -34,40 +35,102 @@ const postersContainer = document.querySelector(".posters");
 movieTitle.textContent = movie.title;
 movieDescription.textContent = movie.description;
 
+const playIcon = playPauseBtn.querySelector("i");
+
+playPauseBtn.addEventListener("click", () => {
+  if (movieVideo.paused) {
+    movieVideo.play();
+  } else {
+    movieVideo.pause();
+  }
+});
+movieVideo.addEventListener("play", () => {
+  playPauseBtn.style.visibility = "hidden";
+
+  playIcon.classList.remove("fa-play");
+  playIcon.classList.add("fa-pause");
+});
+
+movieVideo.addEventListener("pause", () => {
+  playPauseBtn.style.visibility = "visible";
+
+  playIcon.classList.remove("fa-pause");
+  playIcon.classList.add("fa-play");
+});
+
+movieVideo.addEventListener("ended", () => {
+  playPauseBtn.style.visibility = "visible";
+
+  playIcon.classList.remove("fa-pause");
+  playIcon.classList.add("fa-play");
+});
 // displaying the movie, comments and posters
 const commentFragment = document.createDocumentFragment();
 comments.forEach((comment) => {
-  const article = document.createElement("article");
-  article.className = "comment";
-  const figure = document.createElement("figure");
-  figure.className = "comment-profile";
-  const img = document.createElement("img");
-  img.src = comment.image;
-  img.alt = comment.name;
+  const article = createElement("article", {
+    className: "comment",
+  });
+  const figure = createElement("figure", {
+    className: "comment-profile",
+  });
+  const img = createElement("img", {
+    attributes: {
+      src: comment.image,
+      alt: comment.name,
+    },
+  });
+  const span = createElement("span");
+
+  const name = createElement("p", {
+    className: "comment-name",
+    textContent: comment.name,
+  });
+
+  const description = createElement("p", {
+    className: "comment-description",
+    textContent: comment.comment,
+  });
+
   figure.appendChild(img);
-  const span = document.createElement("span");
-  const name = document.createElement("p");
-  name.className = "comment-name";
-  name.textContent = comment.name;
-  const description = document.createElement("p");
-  description.className = "comment-description";
-  description.textContent = comment.comment;
-  span.appendChild(name);
-  span.appendChild(description);
-  article.appendChild(figure);
-  article.appendChild(span);
+  span.append(name, description);
+  article.append(figure, span);
+
   commentFragment.appendChild(article);
 });
 commentsContainer.appendChild(commentFragment);
 
 const postersFragments = document.createDocumentFragment();
+
 posters.forEach((poster) => {
-  const figure = document.createElement("figure");
-  figure.className = "poster-container";
-  const img = document.createElement("img");
-  img.src = poster.imageUrl;
-  img.alt = poster.title;
+  const figure = createElement("figure", {
+    className: "poster-container",
+  });
+
+  const img = createElement("img", {
+    attributes: {
+      src: poster.imageUrl,
+      alt: poster.title,
+    },
+  });
+
   figure.appendChild(img);
+
   postersFragments.appendChild(figure);
 });
-postersContainer.append(postersFragments);
+
+postersContainer.appendChild(postersFragments);
+
+function createElement(tag, options = {}) {
+  const element = document.createElement(tag);
+
+  if (options.className) element.className = options.className;
+
+  if (options.textContent) element.textContent = options.textContent;
+
+  if (options.attributes) {
+    Object.entries(options.attributes).forEach(([key, value]) =>
+      element.setAttribute(key, value),
+    );
+  }
+  return element;
+}
