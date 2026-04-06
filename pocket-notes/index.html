@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <script defer src="./script.js"></script>
+  </head>
+
+  <body>
+    <header class="header-container">
+      <p class="header-title">Pocket Notes</p>
+      <span class="header-btn-container">
+        <button class="delete-all-btn">DELETE ALL</button>
+        <button class="new-btn">NEW</button>
+      </span>
+    </header>
+    <main class="wrapper">
+      <section class="notes-container">
+        <article class="notes">
+          <p class="notes-title">One Morning</p>
+          <p class="notes-createdAt">Mar 11, 2022</p>
+          <p class="notes-description">
+            Dummy text is text that is used in the publishing industry or by web
+            designers to occupy the space which will later be filled with 'real'
+            content. This is required when, for example, the final text is not
+            yet available. Dummy text is also known as 'fill text. It is said
+            that song composers of the past used dummy texts as lyrics when
+            writing melodies in order to have a 'ready-made text to sing with
+            the melody. Dummy texts have been in use by typesetters since the
+            16th century.
+          </p>
+        </article>
+        <article class="notes">
+          <p class="notes-title">One Morning</p>
+          <p class="notes-createdAt">Mar 11, 2022</p>
+          <figure class="note-cover-img">
+            <img src="./assets/image.png" alt="">
+          </figure>
+          <p class="notes-description">
+            Dummy text is text that is used in the publishing industry or by web
+            designers to occupy the space which will later be filled with 'real'
+            content. This is required when, for example, the final text is not
+            yet available. Dummy text is also known as 'fill text. It is said
+            that song composers of the past used dummy texts as lyrics when
+            writing melodies in order to have a 'ready-made text to sing with
+            the melody. Dummy texts have been in use by typesetters since the
+            16th century.
+            
+          </p>
+        </article>
+        <article class="notes">
+          <p class="notes-title">One Morning</p>
+          <p class="notes-createdAt">Mar 11, 2022</p>
+          <p class="notes-description">
+            Dummy text is text that is used in the publishing industry or by web
+            designers to occupy the space which will later be filled with 'real'
+            content. This is required when, for example, the final text is not
+            yet available. Dummy text is also known as 'fill text. It is said
+            that song composers of the past used dummy texts as lyrics when
+            writing melodies in order to have a 'ready-made text to sing with
+            the melody. Dummy texts have been in use by typesetters since the
+            16th century.Dummy text is also known as 'fill text. It is said
+            that song composers of the past used dummy texts as lyrics when
+            writing melodies in order to have a 'ready-made text to sing with
+            the melody. Dummy texts have been in use by typesetters since the
+            16th century.
+          </p>
+        </article>
+        <article class="notes">
+          <p class="notes-title">One Morning</p>
+          <p class="notes-createdAt">Mar 11, 2022</p>
+          <p class="notes-description">
+            Dummy text is text that is used in the publishing industry or by web
+            designers to occupy the space which will later be filled with 'real'
+            content. This is required when, for example, the final text is not
+            yet available. Dummy text is also known as 'fill text. It is said
+            that song composers of the past used dummy texts as lyrics when
+            writing melodies in order to have a 'ready-made text to sing with
+            the melody. Dummy texts have been in use by typesetters since the
+            16th century.
+          </p>
+        </article>
+        <article class="notes">
+          <p class="notes-title">One Morning</p>
+          <p class="notes-createdAt">Mar 11, 2022</p>
+          <p class="notes-description">
+            Dummy text is text that is used in the publishing industry or by web
+            designers to occupy the space which will later be filled with 'real'
+            content. This is required when, for example, the final text is not
+            yet available. Dummy text is also known as 'fill text. It is said
+            that song composers of the past used dummy texts as lyrics when
+            writing melodies in order to have a 'ready-made text to sing with
+            the melody. Dummy texts have been in use by typesetters since the
+            16th century.
+          </p>
+        </article>
+      </section>
+
+      <section class="new-modal-wrapper">
+        <aside class="new-modal">
+          <section class="top-section">
+            <div class="toast">
+              <p class="toast-title">NEW NOTE</p>
+              <span class="new-modal-toast-close"
+                ><i class="fa-solid fa-xmark"></i
+              ></span>
+            </div>
+            <section class="modal-inputs">
+              <input type="text" placeholder="Notes Title" class="title" />
+              <input type="text" placeholder="Add Image URL" class="imageUrl" />
+              <textarea
+                placeholder="Add content here"
+                class="content"
+              ></textarea>
+            </section>
+          </section>
+
+          <section class="bottom-section">
+            <section class="background-colors">
+              <span class="color bubblegum-crisis"> </span>
+              <span class="color emptiness"> </span>
+              <span class="color banana-bread"> </span>
+              <span class="color pineapple-perfume"> </span>
+              <span class="color peach-fizz"> </span>
+            </section>
+
+            <button class="modal-add-btn">ADD</button>
+          </section>
+        </aside>
+      </section>
+
+      <section>
+        <button class="load-more-btn">LOAD MORE</button>
+      </section>
+      <section class="delete-all-modal-wrapper">
+        <section class="delete-all-modal">
+          <div class="toast">
+            <p class="toast-title">Confirm Delete</p>
+            <span class="delete-modal-toast-close"
+              ><i class="fa-solid fa-xmark"></i
+            ></span>
+          </div>
+          <p class="delete-modal-message">
+            Are you sure you want to delete all notes ?
+          </p>
+          <button class="delete-modal-btn">YES, DELETE </button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
