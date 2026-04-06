@@ -34,9 +34,9 @@ const movieDescription = document.querySelector(".movie-description");
 const postersContainer = document.querySelector(".posters");
 movieTitle.textContent = movie.title;
 movieDescription.textContent = movie.description;
-
 const playIcon = playPauseBtn.querySelector("i");
 
+//pause and play button
 playPauseBtn.addEventListener("click", () => {
   if (movieVideo.paused) {
     movieVideo.play();
@@ -46,24 +46,22 @@ playPauseBtn.addEventListener("click", () => {
 });
 movieVideo.addEventListener("play", () => {
   playPauseBtn.style.visibility = "hidden";
-
   playIcon.classList.remove("fa-play");
   playIcon.classList.add("fa-pause");
 });
 
 movieVideo.addEventListener("pause", () => {
   playPauseBtn.style.visibility = "visible";
-
   playIcon.classList.remove("fa-pause");
   playIcon.classList.add("fa-play");
 });
 
 movieVideo.addEventListener("ended", () => {
   playPauseBtn.style.visibility = "visible";
-
   playIcon.classList.remove("fa-pause");
   playIcon.classList.add("fa-play");
 });
+
 // displaying the movie, comments and posters
 const commentFragment = document.createDocumentFragment();
 comments.forEach((comment) => {
@@ -120,13 +118,12 @@ posters.forEach((poster) => {
 
 postersContainer.appendChild(postersFragments);
 
+
+//helper function for creating elements
 function createElement(tag, options = {}) {
   const element = document.createElement(tag);
-
   if (options.className) element.className = options.className;
-
   if (options.textContent) element.textContent = options.textContent;
-
   if (options.attributes) {
     Object.entries(options.attributes).forEach(([key, value]) =>
       element.setAttribute(key, value),
