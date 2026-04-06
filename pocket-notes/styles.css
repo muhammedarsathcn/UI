@@ -251,6 +251,14 @@ body {
     &:hover {
       transform: scale(1.04);
     }
+
+  }
+  .tick{
+    display: none;
+    color: #000;
+  }
+  .selected{
+    display: block;
   }
   .bubblegum-crisis {
     background-color: #e6cdeb;
