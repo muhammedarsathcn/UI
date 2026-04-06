@@ -8,7 +8,7 @@ const calculateBtn = document.querySelector(".section-two-btn");
 const calculateInputField = document.querySelector("#step2 .input-field");
 const step3Shape = document.querySelector("#step3 .section-shape");
 const step3Title = document.querySelector("#step3 .section-title");
-// const sideMiddle = document.querySelector("#side .middle");
+const sideMiddle = document.querySelector("#side .middle")
 const sideRight = document.querySelector("#side .right-side");
 const areaMiddle = document.querySelector("#area .middle");
 const areaRight = document.querySelector("#area .right-side");
@@ -24,6 +24,7 @@ const shapesData = {
     side: (s) => `${s}`,
     formulaArea: "πr²",
     formulaPerimeter: "2πr",
+    formulaSide:"r"
   },
 
   square: {
@@ -42,6 +43,7 @@ const shapesData = {
     perimeter: (a) => 3 * a,
     formulaArea: "0.433 × s x s",
     formulaPerimeter: "3 × s",
+    formulaSide:"s"
   },
 };
 step2.style.display = "none";
@@ -50,11 +52,12 @@ step3.style.display = "none";
 let selectedShape = null;
 
 shapes.forEach((shape) => {
+  console.log(shape)
   shape.addEventListener("click", () => {
     shapes.forEach((s) => s.classList.remove("selected"));
     shape.classList.add("selected");
     console.log(shape.classList)
-    selectedShape = shape.className.split(" ")[1];
+    selectedShape = shape.firstElementChild.className;
     nextBtn.style.display = "inline-block";
   });
 });
@@ -83,7 +86,6 @@ calculateBtn.addEventListener("click", () => {
   }
 
   step2.style.display = "none";
-
   step3Shape.classList.remove("section-shape");
   step3Shape.classList.add(selectedShape);
 
@@ -91,11 +93,12 @@ calculateBtn.addEventListener("click", () => {
   step3Shape.style.position = "relative";
   step3Title.textContent = shapesData[selectedShape].name;
 
+  sideMiddle.textContent = shapesData[selectedShape].formulaSide
   sideRight.textContent = side + " cm";
 
   areaMiddle.textContent = shapesData[selectedShape].formulaArea;
   areaRight.textContent =
-    shapesData[selectedShape].area(side).toFixed(2) + "sq cm";
+    shapesData[selectedShape].area(side).toFixed(2) + " sq cm";
 
   perimeterMiddle.textContent = shapesData[selectedShape].formulaPerimeter;
   perimeterRight.textContent =
