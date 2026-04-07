@@ -78,17 +78,14 @@ comments.forEach((comment) => {
     },
   });
   const span = createElement("span");
-
   const name = createElement("p", {
     className: "comment-name",
     textContent: comment.name,
   });
-
   const description = createElement("p", {
     className: "comment-description",
     textContent: comment.comment,
   });
-
   figure.appendChild(img);
   span.append(name, description);
   article.append(figure, span);
@@ -98,24 +95,19 @@ comments.forEach((comment) => {
 commentsContainer.appendChild(commentFragment);
 
 const postersFragments = document.createDocumentFragment();
-
 posters.forEach((poster) => {
   const figure = createElement("figure", {
     className: "poster-container",
   });
-
   const img = createElement("img", {
     attributes: {
       src: poster.imageUrl,
       alt: poster.title,
     },
   });
-
   figure.appendChild(img);
-
   postersFragments.appendChild(figure);
 });
-
 postersContainer.appendChild(postersFragments);
 
 
