@@ -23,7 +23,6 @@ const countryCodes = {
 $(document).ready(function () {
   $.getJSON("./data/locations.json", function (locations) {
     let locationHTML = "";
-    const fragment = document.createDocumentFragment();
     locations.forEach(function (location) {
       locationHTML = `
         <article class="location-card">

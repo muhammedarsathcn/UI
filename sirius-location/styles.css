@@ -31,7 +31,7 @@ body {
       padding: 0.625rem 2.05rem;
       background-color: #000;
       color: #fff;
-      font-size: 0.625rem;
+      font-size: 0.675rem;
       font-weight: 700;
       border-top-left-radius: 0.5rem;
       border-top-right-radius: 0.5rem;
@@ -45,7 +45,7 @@ body {
     position: relative;
     width: 39.5rem;
     height: 35.0625rem;
-    padding: 1.845rem;
+    padding: 1.645rem;
     font-size: 0.8rem;
     overflow-y: scroll;
     line-height: 1.5;
@@ -120,6 +120,7 @@ body {
     display: none;
     justify-content: center;
     flex-direction: column;
+     height: 33.025rem;
     overflow-y: scroll;
     row-gap: 0.625rem;
     font-size: 0.6875rem;
