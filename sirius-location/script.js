@@ -1,19 +1,15 @@
 $(document).ready(function () {
-  $(".accordion").click(function () {
-    $(this).toggleClass("active");
-    const icon = $(this).find("i");
-    if (icon.length) {
-      icon.toggleClass("rotate");
-    }
-    const panel = $(this).next();
-    if (panel.css("display") === "block") {
-      panel.css("display", "none");
-    } else {
-      panel.css("display", "block");
-    }
+  $("#accordion").accordion({
+    collapsible: true,
+    heightStyle: "content",
+    animate: 200,
+    active: false,
+    icons: {
+      header: "ui-icon-triangle-1-e",
+      activeHeader: "ui-icon-triangle-1-s",
+    },
   });
 });
-
 const countryCodes = {
   "United States": "US",
   India: "IN",
@@ -36,15 +32,19 @@ $(document).ready(function () {
           <p class="contact-number">${location.contact}</p>
         </article>
       `;
-      $(".section-three").append(locationHTML);
+      $("# section-three").append(locationHTML);
     });
   });
 });
 
+
+$("#tabs").tabs();
+
+
 $(document).ready(function () {
   $(".tab").click(function () {
     const tabText = $(this).text().trim();
-    $(".section-one").hide();
+    $("#section-one").hide();
     $(".section-two").hide();
     $(".section-three").hide();
     $(".tab").removeClass("active-tab");

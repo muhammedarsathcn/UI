@@ -72,46 +72,38 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 1.875rem;
-      .accordion-container {
-        width: 100%;
-        margin-bottom:0.6875rem;
-        .accordion {
-          background-color: #838eb6;
-          color: #fff;
-          border: 0.0625rem solid #abb2cd;
-          cursor: pointer;
-          padding: 0.625rem;
-          width: 100%;
-          text-align: left;
-          outline: none;
-          transition: 0.4s;
-          font-weight: 600;
-          font-size: 0.75rem;
-          .active,
-          &:hover {
-            background-color: #838eb6;
-          }
-          i {
-            font-size: 0.375rem;
-            transition: transform 0.3s ease;
-            margin-right: 0.5rem;
-          }
-          i.rotate {
-            transform: rotate(90deg);
-          }
-        }
+
+      #accordion {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        background: transparent;
+        gap: 10px;
       }
-      .panel {
-        padding: 1.125rem;
-        background-color: white;
-        display: none;
-        overflow: hidden;
-        border: 0.0625rem solid #abb2cd;
-        margin-bottom: 0.625rem;
-        p {
-          font-size: 0.7rem;
-        }
+
+      #accordion .ui-accordion-header {
+        background: #6e7798;
+        color: #fff;
+        border: none;
+        padding: 18px 10px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+      #accordion .ui-accordion-header.ui-state-active {
+        background-color: #3f3c96;
+      }
+      #accordion .ui-accordion-header .ui-icon {
+        filter: brightness(0) invert(1);
+      }
+
+      #accordion .ui-accordion-content {
+        /* position: absolute; */
+        margin-top: -10px;
+        border: 1px solid #6e7798;
+        padding: 20px;
       }
     }
   }
@@ -120,7 +112,7 @@ body {
     display: none;
     justify-content: center;
     flex-direction: column;
-     height: 33.025rem;
+    height: 33.025rem;
     overflow-y: scroll;
     row-gap: 0.625rem;
     font-size: 0.6875rem;
