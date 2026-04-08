@@ -36,15 +36,17 @@ movieTitle.textContent = movie.title;
 movieDescription.textContent = movie.description;
 const playIcon = playPauseBtn.querySelector("i");
 
-//pause and play button
+//movies event listeners
+let controlsActivated = false;
 playPauseBtn.addEventListener("click", () => {
   if (movieVideo.paused) {
     movieVideo.play();
   } else {
-    movieVideo.pause();
+    movieVideo.controls = false;
   }
 });
 movieVideo.addEventListener("play", () => {
+  movieVideo.controls = true;
   playPauseBtn.style.visibility = "hidden";
   playIcon.classList.remove("fa-play");
   playIcon.classList.add("fa-pause");
@@ -52,8 +54,17 @@ movieVideo.addEventListener("play", () => {
 
 movieVideo.addEventListener("pause", () => {
   playPauseBtn.style.visibility = "visible";
+  movieVideo.controls = false;
   playIcon.classList.remove("fa-pause");
   playIcon.classList.add("fa-play");
+});
+
+movieVideo.addEventListener("seeking", () => {
+  movieVideo.play();
+  movieVideo.controls = true;
+});
+movieVideo.addEventListener("seeked", () => {
+  movieVideo.play();
 });
 
 movieVideo.addEventListener("ended", () => {
@@ -109,7 +120,6 @@ posters.forEach((poster) => {
   postersFragments.appendChild(figure);
 });
 postersContainer.appendChild(postersFragments);
-
 
 //helper function for creating elements
 function createElement(tag, options = {}) {
