@@ -32,7 +32,7 @@ $(document).ready(function () {
           <p class="contact-number">${location.contact}</p>
         </article>
       `;
-      $("# section-three").append(locationHTML);
+      $("#section-three").append(locationHTML);
     });
   });
 });
