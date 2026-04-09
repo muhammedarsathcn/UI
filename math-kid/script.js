@@ -30,16 +30,15 @@ const shapesData = {
     formulaPerimeter: "2πr",
     formulaSide: "r",
   },
-  circle1: {
-    name: "circle2",
-    baseShape: "circle",
-    title: "2. Enter Radius",
-    area: (r) => Math.PI * r * r,
-    perimeter: (r) => 2 * Math.PI * r,
-    side: (s) => `${s}`,
-    formulaArea: "πr²",
-    formulaPerimeter: "2πr",
-    formulaSide: "r",
+  triangle: {
+    name: "Equilateral Triangle",
+    baseShape: "triangle",
+    title: "2. Enter Side (Base & Height)",
+    area: (a) => (Math.sqrt(3) / 4) * a * a,
+    perimeter: (a) => 3 * a,
+    formulaArea: "0.433 * s * s",
+    formulaPerimeter: "3 * s",
+    formulaSide: "s",
   },
   square: {
     name: "Square",
@@ -52,16 +51,6 @@ const shapesData = {
     formulaPerimeter: "4 * s",
     formulaSide: "s",
   },
-  triangle: {
-    name: "Equilateral Triangle",
-    baseShape: "triangle",
-    title: "2. Enter Side (Base & Height)",
-    area: (a) => (Math.sqrt(3) / 4) * a * a,
-    perimeter: (a) => 3 * a,
-    formulaArea: "0.433 * s * s",
-    formulaPerimeter: "3 * s",
-    formulaSide: "s",
-  },
 };
 // initially step2 and step3 hide
 step2.style.display = "none";
@@ -69,29 +58,27 @@ step3.style.display = "none";
 let shapeName = "";
 // Helper functions for session storage
 const saveState = () => {
-  sessionStorage.setItem("shapeName",shapeName)
+  sessionStorage.setItem("shapeName", shapeName);
   sessionStorage.setItem("selectedShape", selectedShape);
   sessionStorage.setItem("inputValue", calculateInputField.value);
 };
 
+//restore function
 const restoreState = () => {
-  const shapeName = sessionStorage.getItem("shapeName")
+  const shapeName = sessionStorage.getItem("shapeName");
   const savedShape = sessionStorage.getItem("selectedShape");
   const savedInputValue = sessionStorage.getItem("inputValue");
   const savedStep = sessionStorage.getItem("currentStep");
   if (savedShape) {
     selectedShape = savedShape;
-   document.querySelectorAll(".shape").forEach((shape) => {
-  if (
-    shape.firstElementChild.classList.contains(savedShape) 
-    && shape.firstElementChild.classList.contains(shapeName)
-  ) {
-    shape.classList.add("selected");
-  }
-});
-    // document.querySelectorAll(".shape").forEach((shape) => {
-   
-    // });
+    document.querySelectorAll(".shape").forEach((shape) => {
+      if (
+        shape.firstElementChild.classList.contains(savedShape) &&
+        shape.firstElementChild.classList.contains(shapeName)
+      ) {
+        shape.classList.add("selected");
+      }
+    });
     nextBtn.style.display = "inline-block";
   }
 
@@ -121,7 +108,6 @@ const restoreState = () => {
   }
 };
 
-
 Object.entries(shapesData).forEach((key) => {
   const shapeDiv = document.createElement("div");
   shapeDiv.classList.add("shape");
@@ -134,7 +120,7 @@ Object.entries(shapesData).forEach((key) => {
       .forEach((s) => s.classList.remove("selected"));
     shapeDiv.classList.add("selected");
     selectedShape = key[1].baseShape;
-     shapeName = key[1].name;
+    shapeName = key[1].name;
     saveState();
     nextBtn.style.display = "inline-block";
   });
@@ -148,7 +134,7 @@ shapes.forEach((shape) => {
     shapes.forEach((s) => s.classList.remove("selected"));
     shape.classList.add("selected");
     selectedShape = shape.firstElementChild.className;
-   
+
     saveState();
     nextBtn.style.display = "inline-block";
   });
@@ -162,6 +148,7 @@ nextBtn.addEventListener("click", () => {
   step2Title.textContent = shapesData[selectedShape].title;
 });
 
+//event listener to store the input value in session storage
 calculateInputField.addEventListener("input", () => {
   sessionStorage.setItem("inputValue", calculateInputField.value);
 });
@@ -217,7 +204,7 @@ startAgainBtn.addEventListener("click", () => {
   sessionStorage.removeItem("selectedShape");
   sessionStorage.removeItem("inputValue");
   sessionStorage.removeItem("currentStep");
-  sessionStorage.removeItem("shapeName")
+  sessionStorage.removeItem("shapeName");
 });
 
 restoreState();
