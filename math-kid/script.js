@@ -188,7 +188,6 @@ calculateBtn.addEventListener("click", () => {
   perimeterRight.textContent = `${shapesData[selectedShape].perimeter(side).toFixed(2)}  cm`;
   step3.style.display = "flex";
 });
-
 // event listener for cleaning all stored data and start again from the first section
 startAgainBtn.addEventListener("click", () => {
   document.querySelectorAll(".shape").forEach((shape) => {
@@ -205,6 +204,7 @@ startAgainBtn.addEventListener("click", () => {
   sessionStorage.removeItem("inputValue");
   sessionStorage.removeItem("currentStep");
   sessionStorage.removeItem("shapeName");
+  restoreState();
 });
 
 restoreState();

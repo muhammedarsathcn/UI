@@ -20,7 +20,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.0625rem;
   }
-  .platform{
+  .platform {
     letter-spacing: 0.125rem;
   }
 }
@@ -40,7 +40,6 @@ body {
     width: 100%;
   }
 }
-
 .one {
   padding-top: 15.5rem;
 }
@@ -74,16 +73,8 @@ body {
   height: 1.45rem;
   border-left: 0.175rem solid #fff;
   border-bottom: 0.175rem solid #fff;
- 
   transform: rotate(-50deg);
   color: #fff;
-}
-.triangle {
-  .tick {
-    position: relative;
-    top: 4.9875rem;
-    left: -1.5625rem;
-  }
 }
 .shape.selected .tick {
   display: block;
@@ -114,6 +105,11 @@ body {
   border-width: 0 5rem 10.0125rem 5rem;
   border-color: transparent transparent #f3afda transparent;
   transform: rotate(0deg);
+  .tick {
+    position: relative;
+    top: 4.9875rem;
+    left: -1.5625rem;
+  }
 }
 .square {
   width: 9.6875rem;
@@ -131,7 +127,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .section-one-btn {
   display: none;
   margin-top: 5.8125rem;
@@ -162,7 +157,6 @@ body {
     transform: scale(1.1);
   }
 }
-
 .input-field {
   width: 44.625rem;
   height: 5.3125rem;
@@ -185,24 +179,33 @@ body {
 }
 .measurement {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   min-width: 27%;
   max-width: 50%;
   font-size: 1.2rem;
   font-weight: 400;
   .left-side {
+    display: flex;
+    align-items: center;
     flex: 1.5;
+    height: 100%;
     padding: 0.75rem 1.0625rem;
     background-color: #2c60cf;
   }
   .middle {
+    display: flex;
+    align-items: center;
     flex: 1.5;
+    height: 100%;
     padding: 0.75rem 1.0625rem;
     background-color: #4a5c7b;
   }
   .right-side {
+    display: flex;
+    align-items: center;
     flex: 2;
     padding: 0.75rem 1.0625rem;
+    height: 100%;
     background-color: #4a86f7;
   }
 }
