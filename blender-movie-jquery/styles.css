@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* header  */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  z-index: 2;
+  padding: 1rem 17.5rem;
+  box-shadow: 0px 0.375rem 0.75rem #00000025;
+  .header-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+  .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    .profile-name {
+      font-size: 0.625rem;
+    }
+    .profile-img-container {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+/* main container  */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 1.625rem;
+  padding-left: 16.2%;
+  padding-right: 16.2%;
+  padding-top: 85px;
+  padding-bottom: 1.25rem;
+  background-color: #f5f5f5;
+  .movie {
+    flex: 71%;
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 24.5%;
+      left: 40%;
+      z-index: 2;
+      width: 72px;
+      height: 72px;
+      border: 5px solid #ffff;
+      border-radius: 50%;
+      cursor: pointer;
+
+      i {
+        font-size: 32px;
+        color: #ffff;
+        cursor: pointer;
+      }
+    }
+    .video-container {
+      width: 100%;
+      height: 24.0625rem;
+      object-fit: cover;
+    }
+    .movie-title {
+      padding-top: 0.9375rem;
+      padding-bottom: 0.3125rem;
+      font-size: 1.4375rem;
+      font-weight: 500;
+    }
+    .movie-description {
+      color: #2e2e2e;
+      font-size: 0.7813rem;
+      line-height: 1.3rem;
+      padding-bottom: 1.5625rem;
+      border-bottom: 0.0625rem solid #e2e2e2;
+    }
+    .comments {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding-top: 1.2625rem;
+
+      .comments-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        padding-bottom: 0.625rem;
+      }
+
+      .comment {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.625rem;
+        padding-top: 0.1rem;
+        .comment-profile {
+          width: 2.5rem;
+          border-radius: 50%;
+          flex: 0 0 2.5rem;
+        }
+        .comment-profile img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .comment-name {
+          font-size: 0.8438rem;
+          font-weight: 600;
+          padding-bottom: 0.3125rem;
+        }
+        .comment-description {
+          color: #2e2e2e;
+          font-size: 0.7375rem;
+        }
+      }
+    }
+  }
+  .posters {
+    flex: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.625rem;
+    .posters-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .poster-container {
+      width: 16.875rem;
+      height: 23.6875rem;
+    }
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 17.5625rem;
+  background-color: #222222;
+
+  .footer-copyright {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8438rem;
+    font-weight: 600;
+    span {
+      font-size: 17px;
+    }
+  }
+  .footer-company-name {
+    font-size: 0.8438rem;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+.bottom-container {
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  height: 1.25rem;
+  box-shadow: 0px 6px 12px #00000025;
+}
+
+.chat-icon {
+  position: fixed;
+  bottom: 1.875rem;
+  right: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.1875rem;
+  height: 4.1875rem;
+  border-radius: 50%;
+  background-color: #b53fa9;
+  cursor: pointer;
+  transition: all 300ms linear;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  i {
+    font-size: 1.625rem;
+    color: #fff;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 1rem 1rem;
+    .profile-name {
+      display: none;
+    }
+  }
+  .container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    .movie{
+         .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 17.5%;
+      left: 40%;
+      z-index: 2;
+      width: 72px;
+      height: 72px;
+      border: 5px solid #ffff;
+      border-radius: 50%;
+      cursor: pointer;
+
+      i {
+        font-size: 32px;
+        color: #ffff;
+        cursor: pointer;
+      }
+    }
+
+    }
+    
+  }
+   
+  .footer-container {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    width: 100%;
+  }
+  .container {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    flex-direction: column;
+    .movie {
+      .video-container {
+        height: 15.625rem;
+      }
+    }
+    .comments {
+      padding-bottom: 30px;
+      border-bottom: 0.0625rem solid #e2e2e2;
+    }
+    .posters {
+      width: 100%;
+      .poster-container {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+  }
+  .footer-container {
+    flex-direction: column;
+    .footer-company-name {
+      font-size: 24px;
+    }
+  }
+}
