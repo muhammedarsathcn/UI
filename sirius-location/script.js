@@ -3,11 +3,10 @@ $(document).ready(function () {
     collapsible: true,
     heightStyle: "content",
     animate: 200,
-    active: false,
+    active: true,
     icons: {
       header: "ui-icon-triangle-1-e",
       activeHeader: "ui-icon-triangle-1-s",
-      
     },
   });
 });
@@ -38,9 +37,7 @@ $(document).ready(function () {
   });
 });
 
-
 $("#tabs").tabs();
-
 
 $(document).ready(function () {
   $(".tab").click(function () {

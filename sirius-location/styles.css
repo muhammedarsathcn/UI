@@ -5,16 +5,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #f5f5f5;
 }
 
 /* wrapper layout */
-
 .wrapper {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,67 +19,52 @@ body {
   position: relative;
   gap: 33px;
 }
-
 /* logo */
-
 .wrapper .logo-container {
-  margin-top: 0.4rem;
+  margin-top: 6.4px;
   transform: scale(0.5);
 }
-
 /* tabs container width */
-
 .wrapper #tabs {
-  /* width: 632px; */
   border: none;
   background: transparent;
 }
 
 /* tabs header layout */
-
 .wrapper #tabs .ui-tabs-nav {
   display: flex;
-  gap: 10px;
+  column-gap: 11px;
   border: none;
-  padding-left: 18px;
+  padding-left: 16px;
   background: none;
 }
 .ui-widget-header {
   background: transparent;
 }
-
 .wrapper #tabs .ui-tabs-nav li {
   list-style: none;
   border: none;
   background-color: none;
 }
-
 #tabs .ui-tabs-nav li.ui-tabs-active a {
   background-color: #061a6c;
   color: white;
 }
 /* tab buttons */
-
 .wrapper #tabs .ui-tabs-nav li a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-
-  padding: 10px 32px 7px 32px;
+  padding: 11px 28.5px 9px 29.5px;
   color: #fff;
   font-size: 11px;
   font-weight: 700;
   text-decoration: none;
   border-radius: 8px 8px 0 0;
 }
-
 .wrapper #tabs .ui-tabs-tab {
   border-radius: 5px 5px 0 0;
   background: #000;
   z-index: 4;
 }
-
 .sections {
   width: 631px;
   height: 561px;
@@ -94,63 +76,49 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2625rem;
-
-  /* padding-bottom: 32px; */
-}
-
-/* ABOUT image */
-
-#section-one .image-container {
- margin-top: 5.2px;
-  width: 576px;
-  height:240px
-}
-#section-one {
+  gap: 20.2px;
+  color: #212121;
   line-height: 1.4;
   font-size: 13.9px;
-  padding-top: 25px;
+  font-weight: 100;
+  padding-top: 23px;
 }
-
-
+/* ABOUT image */
+#section-one .image-container {
+  margin-top: 6.1px;
+  width: 576px;
+  height: 240px;
+}
 #section-one .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 /* SOLUTIONS accordion section */
-
 #section-two {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-top: 19px;
-  padding-right:21px;
+  padding-top: 16px;
+  padding-right: 21px;
   padding-left: 21px;
-
 }
-
 /* accordion layout */
-
-
 #accordion {
   display: flex;
   flex-direction: column;
   border: none;
   background: transparent;
-  gap: 7px;
+  gap: 7.4px;
   width: 100%;
 }
-
 /* accordion header */
-
 #accordion .ui-accordion-header {
   background: #838eb6;
   color: #fff;
   border: none;
-  padding: 11.3px 10px;
+  padding: 11.5px 10px;
   font-size: 10.4px;
   font-weight: 600;
   cursor: pointer;
@@ -159,86 +127,71 @@ body {
   letter-spacing: 1.2px;
   border-radius: 0px;
 }
-
 /* active accordion header */
-
 #accordion .ui-accordion-header.ui-state-active {
   background-color: #3f3c96;
 }
-
 /* triangle icon white */
-
 #accordion .ui-icon {
   filter: brightness(0) invert(1);
-    transform: scale(0.7); 
+  transform: scale(0.7);
 }
-
 /* accordion content */
-
 #accordion .ui-accordion-content {
   margin-top: -10px;
   border: 1px solid #acb3ce;
   padding: 14px 15px;
   font-size: 12px;
+  background-color: #ffff;
+  color:#222222;
   line-height: 1.33;
   border-radius: 0;
 }
-
 /* LOCATIONS section */
-
 #section-three {
   display: flex;
   flex-direction: column;
-  height: 35rem;
+  height: 560px;
   overflow-y: scroll;
-  font-size: 0.6875rem;
+  font-size: 12px;
   padding-top: 18px;
   padding-left: 20px;
   padding-right: 20px;
 }
-
 /* location card */
-
 #section-three .location-card {
   display: flex;
   align-items: center;
-  padding:5px 10px ;
+  padding: 5px 10px;
   margin-bottom: 10px;
 }
-
 /* city */
-
 #section-three .city {
   flex: 23.33%;
   margin-left: 6%;
 }
-
 /* phone */
 #section-three .contact-number {
   flex: 13.33%;
   text-align: right;
   padding-right: 11px;
 }
-
 /* country */
 #section-three .country {
   display: flex;
   align-items: center;
-  column-gap: 3.025rem;
+  column-gap: 48.4px;
   flex: 30%;
   padding-left: 5px;
 }
-
 /* flag */
 #section-three .flag {
-  width: 1.5625rem;
-  height: 1.5625rem;
+  width: 25px;
+  height: 25px;
   overflow: hidden;
   border-radius: 50%;
   object-fit: cover;
-
 }
-
 #section-three .flag img {
   width: 100%;
   height: 100%;
@@ -246,9 +199,7 @@ body {
   object-fit: cover;
   scale: 1.6;
 }
-
 /* alternating colors */
-
 #section-three .location-card:nth-child(odd) {
   background-color: #eeeeee;
 }
