@@ -16,7 +16,7 @@ body {
   align-items: center;
   position: fixed;
   width: 100%;
-  padding: 27px 40px;
+  padding: 25px 40px;
   z-index: 1;
   background-color: #0a1c2d;
   .logo-container {
@@ -83,13 +83,31 @@ body {
   justify-content: center;
   align-items: center;
   padding: 137px 180px 0px 180px;
+  .empty-img-container {
+    padding-top: 30px;
+
+    width: 300px;
+    height: 290px;
+    scale: 1.8;
+    background: transparent;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .empty-message {
+    position: relative;
+    top: -10px;
+    color: #b2b2b2;
+    font-size: 26px;
+  }
   .notes-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid: (4fr, 2);
     gap: 35px;
     .notes {
-      flex: 0 0 calc(20% - 85px);
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -103,7 +121,6 @@ body {
       &:hover {
         transform: scale(1.04);
       }
-
       background-color: #e7ee9b;
       color: #000;
       border-radius: 8px;
@@ -218,6 +235,11 @@ body {
           font-size: 17px;
           cursor: pointer;
           transition: all 300ms linear;
+          &:disabled {
+            background-color: #a759b250;
+            color: #ffffff50;
+            cursor: not-allowed;
+          }
           &:hover {
             transform: scale(1.04);
           }
@@ -251,13 +273,12 @@ body {
     &:hover {
       transform: scale(1.04);
     }
-
   }
-  .tick{
+  .tick {
     display: none;
     color: #000;
   }
-  .selected{
+  .selected {
     display: block;
   }
   .bubblegum-crisis {
@@ -293,6 +314,7 @@ body {
 
   .load-more-btn {
     padding: 20px 34px;
+    margin-top: 35px;
     border: none;
     border-radius: 50px;
     background-color: #a759b2;
