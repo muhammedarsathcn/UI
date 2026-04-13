@@ -10,47 +10,39 @@ $(document).ready(function () {
       activeHeader: "ui-icon-triangle-1-s",
     },
   });
-
   // Country codes mapping
   const countryCodes = {
     "United States": "US",
-    India: "IN",
-    Canada: "CA",
+    "India": "IN",
+    "Canada": "CA",
     "United Kingdom": "GB",
   };
-
-  // Fetch locations data
   // Fetch locations data
   $.getJSON("./data/locations.json", function (locations) {
+    // Create fragment
+    const fragment = $(document.createDocumentFragment());
     locations.forEach(function (location) {
       const locationDiv = $("<div>").addClass("location");
-
       const flagWrapper = $("<span>").addClass("flag-wrapper");
-
       const figure = $("<figure>").addClass("flag-container");
-
       const flagImg = $("<img>")
         .attr(
           "src",
           `https://flagsapi.com/${countryCodes[location.country]}/flat/64.png`,
         )
         .attr("alt", location.country);
-
       const countryText = $("<p>").addClass("country").text(location.state);
-
       const stateText = $("<p>").addClass("state").text(location.city);
-
       const phoneText = $("<p>").addClass("phone-no").text(location.contact);
-
       // Build structure
       figure.append(flagImg);
-
       flagWrapper.append(figure, countryText);
-
       locationDiv.append(flagWrapper, stateText, phoneText);
-
-      $("#section-three").append(locationDiv);
+      // Append to fragment instead of DOM
+      fragment.append(locationDiv);
     });
+    // Append fragment once to DOM
+    $("#section-three").append(fragment);
   });
 
   // jQuery UI tabs
