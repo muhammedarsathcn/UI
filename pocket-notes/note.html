@@ -16,6 +16,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
+    <script defer src="./util.js"></script>
+
     <script defer src="./note.js"></script>
   </head>
 
@@ -35,32 +37,16 @@
     <main class="wrapper">
       <section class="note-description-container">
         <span class="note-description-title">
-          <span class="color banana-bread"></span>
+          <span class="color"></span>
           <span>
-            <p class="heading">Summer Time - A Long Short Story</p>
-            <p class="notes-createdAt">Mar 11, 2022</p>
+            <p class="heading"></p>
+            <p class="notes-createdAt"></p>
           </span>
         </span>
         <figure class="note-cover-img">
-          <img src="./assets/image.png" alt="cover_img" />
+          <!-- <img src="" alt="cover_img" /> -->
         </figure>
-        <p class="note-description">
-          Most of us have, at some point, considered what we would do if we
-          could travel back in time. Maybe we would give ourselves some hot
-          investment advice and become millionaires, or change history for the
-          better, or witness our favorite historical event. If I could travel
-          back in time and do one thing, I wouldn't cheat on the stock market,
-          or kill Hitler. I would simply give myself a few words of advice. What
-          follows are some of the most important lessons I've learned in life-
-          from books, from hard-fought experience, from friends, teachers and
-          mentors much wiser than myself. Some of these lessons took me a very
-          long time to learn- and while I wish I could have learned them faster,
-          it would have taken me even longer if I didn't have help. Sadly, we
-          can't time travel, but what we can do is learn from others, which is a
-          hell of a lot faster than trying to figure things out for ourselves.
-          Here are 40 little knowledge bombs that, in my opinion, took me way
-          too long to learn.
-        </p>
+        <p class="note-description"></p>
       </section>
       <section class="new-modal-wrapper">
         <aside class="new-modal">
@@ -72,40 +58,64 @@
               ></span>
             </div>
             <section class="modal-inputs">
-              <input type="text" placeholder="Notes Title" class="title" />
-              <input type="text" placeholder="Add Image URL" class="imageUrl" />
+              <input type="text" name="title" placeholder="Notes Title" class="title" />
+              <input type="text" name="image" placeholder="Add Image URL" class="imageUrl" />
               <textarea
                 placeholder="Add content here"
                 class="content"
+                name="content"
               ></textarea>
             </section>
           </section>
 
           <section class="bottom-section">
             <section class="background-colors">
-              <span class="color bubblegum-crisis"> </span>
-              <span class="color emptiness"> </span>
-              <span class="color banana-bread"> </span>
-              <span class="color pineapple-perfume"> </span>
-              <span class="color peach-fizz"> </span>
+              <span class="color bubblegum-crisis">
+                <i class="fa-solid fa-check tick"></i>
+              </span>
+              <span class="color emptiness">
+                <i class="fa-solid fa-check tick"></i>
+              </span>
+              <span class="color banana-bread">
+                <i class="fa-solid fa-check tick"></i>
+              </span>
+              <span class="color pineapple-perfume">
+                <i class="fa-solid fa-check tick"></i>
+              </span>
+              <span class="color peach-fizz">
+                <i class="fa-solid fa-check tick"></i>
+              </span>
             </section>
 
             <button class="modal-add-btn">Edit</button>
           </section>
         </aside>
       </section>
-      <section class="delete-all-modal-wrapper">
-        <section class="delete-all-modal">
+      <section class="unsaved modal-wrapper">
+        <section class="modal">
+          <div class="toast">
+            <p class="toast-title">Confirm</p>
+            <span class="toast-close"><i class="fa-solid fa-xmark"></i></span>
+          </div>
+          <p class="modal-message">
+            Seems like you are in the middle of adding/editing content. Do you
+            want to leave?
+          </p>
+          <button class="modal-btn">YES, CLOSE</button>
+        </section>
+      </section>
+      <section class="delete modal-wrapper">
+        <section class="modal">
           <div class="toast">
             <p class="toast-title">Confirm Delete</p>
-            <span class="delete-modal-toast-close"
+            <span class="modal-toast-close"
               ><i class="fa-solid fa-xmark"></i
             ></span>
           </div>
-          <p class="delete-modal-message">
+          <p class="modal-message">
             Are you sure you want to delete this note?
           </p>
-          <button class="delete-modal-btn">YES, DELETE</button>
+          <button class="modal-btn">YES, DELETE</button>
         </section>
       </section>
     </main>

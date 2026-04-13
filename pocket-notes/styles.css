@@ -112,6 +112,7 @@ body {
       flex-direction: column;
       justify-content: flex-start;
       row-gap: 10px;
+      min-width: 314px;
       min-height: 415px;
       max-height: 415px;
       padding: 20px 22px 24.5px 22px;
@@ -121,7 +122,6 @@ body {
       &:hover {
         transform: scale(1.04);
       }
-      background-color: #e7ee9b;
       color: #000;
       border-radius: 8px;
       .notes-title {
@@ -160,6 +160,7 @@ body {
     background: #06141f99;
     width: 100%;
     transition: all 200ms linear;
+
     .new-modal {
       display: flex;
       flex-direction: column;
@@ -177,7 +178,10 @@ body {
         display: flex;
         flex-direction: column;
         gap: 30px;
-
+        .new-modal-toast-close {
+          cursor: pointer;
+          z-index: 2;
+        }
         .modal-inputs {
           display: flex;
           flex-direction: column;
@@ -274,11 +278,12 @@ body {
       transform: scale(1.04);
     }
   }
-  .tick {
+  .color .tick {
     display: none;
-    color: #000;
   }
-  .selected {
+
+  .color.selected .tick {
+    color: #000;
     display: block;
   }
   .bubblegum-crisis {
@@ -328,7 +333,7 @@ body {
     }
   }
 
-  .delete-all-modal-wrapper {
+  .modal-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -339,7 +344,7 @@ body {
     opacity: 0;
     visibility: hidden;
     background-color: #06141f99;
-    .delete-all-modal {
+    .modal {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -349,11 +354,11 @@ body {
       background-color: #000;
       row-gap: 30px;
     }
-    .delete-modal-message {
+    .modal-message {
       text-align: center;
       font-size: 18px;
     }
-    .delete-modal-btn {
+    .modal-btn {
       padding: 10px 34px;
       border: none;
       border-radius: 50px;
@@ -425,5 +430,112 @@ body {
   }
 }
 
-/* font-family: "Lato", sans-serif;
-font-family: "IBM Plex Sans", sans-serif; */
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100vh;
+  gap: 20px;
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+}
+
+/* small desktop */
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 120px 80px 0 80px;
+  }
+  .wrapper .notes-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .wrapper .new-modal-wrapper .new-modal {
+    width: 45%;
+  }
+  .wrapper .modal-wrapper .modal {
+    width: 50%;
+  }
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 20px;
+  }
+  .wrapper {
+    padding: 120px 40px 0 40px;
+  }
+  .wrapper .notes-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .wrapper .notes-container .notes {
+    min-width: unset;
+  }
+  .wrapper .new-modal-wrapper .new-modal {
+    width: 70%;
+    padding: 35px;
+  }
+  .wrapper .modal-wrapper .modal {
+    width: 70%;
+  }
+  .wrapper .note-description-container {
+    padding-left: 40px;
+  }
+  .wrapper .note-description-container .note-cover-img {
+    width: 100%;
+    padding-left: 0;
+  }
+  .wrapper .note-description-container .note-description {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  .header-container .header-btn-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .wrapper {
+    padding: 140px 20px 0 20px;
+  }
+  .wrapper .notes-container {
+    grid-template-columns: 1fr;
+  }
+  .wrapper .empty-img-container {
+    scale: 1.2;
+    width: 200px;
+    height: 200px;
+  }
+  .wrapper .new-modal-wrapper .new-modal {
+    width: 100%;
+    padding: 25px;
+  }
+  .wrapper .modal-wrapper .modal {
+    width: 90%;
+  }
+  .wrapper .note-description-container {
+    padding-left: 0;
+  }
+  .wrapper .note-description-container .note-description-title {
+    gap: 15px;
+  }
+  .wrapper .note-description-container .note-cover-img {
+    height: 220px;
+  }
+  .wrapper .note-description-container .note-description {
+    font-size: 16px;
+  }
+}

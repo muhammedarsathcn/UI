@@ -3,13 +3,9 @@ const newBtn = document.querySelector(".new-btn");
 const newModal = document.querySelector(".new-modal-wrapper");
 const newModalClose = document.querySelector(".new-modal-toast-close");
 const deleteAllBtn = document.querySelector(".delete-all-btn");
-const deleteAllModal = document.querySelector(".delete-all-modal-wrapper");
-const deleteCloseModal = document.querySelector(
-  ".delete-all-modal .delete-modal-toast-close",
-);
-const deleteAllModalBtn = document.querySelector(
-  ".delete-all-modal-wrapper .delete-modal-btn",
-);
+const deleteAllModal = document.querySelector(".delete.modal-wrapper");
+const deleteCloseModal = document.querySelector(".delete .toast-close");
+const deleteAllModalBtn = document.querySelector(".delete .modal-btn");
 const addNewNoteBtn = document.querySelector(".modal-add-btn");
 const notesTitle = document.querySelector(".title");
 const notesImg = document.querySelector(".imageUrl");
@@ -17,6 +13,9 @@ const notesDescription = document.querySelector(".content");
 const colors = document.querySelectorAll(".background-colors .color ");
 const loadMoreBtn = document.querySelector(".load-more-btn");
 const emptySection = document.querySelector(".empty-section");
+const unsavedModal = document.querySelector(".unsaved.modal-wrapper")
+const unsavedCloseBtn=document.querySelector(".unsaved .toast-close");
+const unsavedConfirmBtn=document.querySelector(".unsaved .modal-btn");
 const bgColors = {
   "bubblegum-crisis": "#e6cdeb",
   emptiness: "#fcfcfc",
@@ -24,7 +23,7 @@ const bgColors = {
   "pineapple-perfume": "#e7ee9b",
   "peach-fizz": "#f2ab90",
 };
-let selectedBgColor = "";
+let selectedBgColor = "bubblegum-crisis";
 let title = "";
 let imgUrl = "";
 let description = "";
@@ -38,6 +37,7 @@ loadMoreBtn.addEventListener("click", () => {
 });
 
 function fetchAllNotes() {
+  console.log("Inside fetch notes", notesData);
   if (notesData.length === 0) {
     emptySection.style.display = "block";
     loadMoreBtn.style.display = "none";
@@ -57,16 +57,13 @@ function fetchAllNotes() {
     const wrapper = document.createElement("div");
 
     wrapper.innerHTML = `
-      <article class="notes"
-               style="background:${note.bgColor}"
+      <article class="notes ${note.bgColor}"
+              
                data-id="${note.id}">
-
         <p class="notes-title">${note.title}</p>
-
         <p class="notes-createdAt">
           ${convertDate(note.id)}
         </p>
-
         ${
           note.imgUrl
             ? `
@@ -76,11 +73,9 @@ function fetchAllNotes() {
           `
             : ""
         }
-
         <p class="notes-description">
           ${note.description}
         </p>
-
       </article>
     `;
 
@@ -105,9 +100,19 @@ newBtn.addEventListener("click", () => {
 
 newModalClose.addEventListener("click", () => {
   document.body.style.overflow = "auto";
-  newModal.classList.remove("new-modal-open");
-  newModal.classList.add("new-modal-close");
+
+  unsavedModal.classList.add("open")
+
 });
+
+unsavedCloseBtn.addEventListener("click", () => {
+  unsavedModal.classList.add("close")
+  
+})
+unsavedConfirmBtn.addEventListener("click", () => {
+  newModal.classList.add("new-modal-close")
+  unsavedModal.classList.add("close")
+})
 
 deleteAllBtn.addEventListener("click", () => {
   document.body.style.overflow = "hidden";
@@ -139,14 +144,11 @@ notesDescription.addEventListener("input", () => {
   description = notesDescription.value;
   validateInputs();
 });
-
 colors.forEach((color) => {
   color.addEventListener("click", () => {
-    colors.forEach((color) =>
-      color.firstElementChild.classList.remove("selected"),
-    );
-    selectedBgColor = bgColors[color.classList[1]];
-    color.firstElementChild.classList.add("selected");
+    colors.forEach((color) => color.classList.remove("selected"));
+    selectedBgColor = color.classList[1];
+    color.classList.add("selected");
     validateInputs();
   });
 });
@@ -193,14 +195,6 @@ deleteAllModalBtn.addEventListener("click", () => {
   deleteAllModal.style.opacity = 0;
   deleteAllModal.style.visibility = "hidden";
 });
-
-function convertDate(stringDate) {
-  const date = new Date(stringDate);
-  const day = date.toLocaleString("en-IN", { day: "2-digit" });
-  const month = date.toLocaleString("en-IN", { month: "short" });
-  const year = date.toLocaleString("en-IN", { year: "numeric" });
-  return `${day} ${month}, ${year}`;
-}
 
 function validateInputs() {
   if (title.trim() && description.trim() && selectedBgColor) {

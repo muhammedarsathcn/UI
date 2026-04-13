@@ -16,7 +16,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-    <script defer src="./script.js"></script>
+    <script defer src="./util.js"></script>
+    <script  defer src="./script.js"></script>
   </head>
 
   <body>
@@ -35,21 +36,6 @@
         <p class="empty-message">Notes you add appear here</p>
       </section>
       <section class="notes-container">
-        <!-- <article class="notes">
-          <p class="notes-title">One Morning</p>
-          <p class="notes-createdAt">Mar 11, 2022</p>
-          <p class="notes-description">
-            Dummy text is text that is used in the publishing industry or by web
-            designers to occupy the space which will later be filled with 'real'
-            content. This is required when, for example, the final text is not
-            yet available. Dummy text is also known as 'fill text. It is said
-            that song composers of the past used dummy texts as lyrics when
-            writing melodies in order to have a 'ready-made text to sing with
-            the melody. Dummy texts have been in use by typesetters since the
-            16th century.
-          </p>
-        </article> -->
-      
       </section>
 
       <section class="new-modal-wrapper">
@@ -72,7 +58,7 @@
           </section>
           <section class="bottom-section">
             <section class="background-colors">
-              <span class="color bubblegum-crisis">
+              <span class="color bubblegum-crisis selected">
                 <i class="fa-solid fa-check tick"></i>
               </span>
               <span class="color emptiness">
@@ -97,20 +83,32 @@
       <section>
         <button class="load-more-btn">LOAD MORE</button>
       </section>
-      <section class="delete-all-modal-wrapper">
-        <section class="delete-all-modal">
+      <section class="delete modal-wrapper">
+        <section class="modal">
           <div class="toast">
             <p class="toast-title">Confirm Delete</p>
-            <span class="delete-modal-toast-close"
+            <span class="toast-close"
               ><i class="fa-solid fa-xmark"></i
             ></span>
           </div>
-          <p class="delete-modal-message">
+          <p class="modal-message">
             Are you sure you want to delete all notes ?
           </p>
-          <button class="delete-modal-btn">YES, DELETE</button>
+          <button class="modal-btn">YES, DELETE</button>
         </section>
       </section>
+        <section class="unsaved modal-wrapper">
+          <section class="modal">
+            <div class="toast">
+              <p class="toast-title">Confirm</p>
+              <span class="toast-close"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <p class="modal-message">
+              Seems like you are in the middle of adding/editing content. Do you want to leave?
+            </p>
+            <button class="modal-btn">YES, CLOSE</button>
+          </section>
+        </section>
     </main>
   </body>
 </html>
